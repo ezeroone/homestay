@@ -1,0 +1,230 @@
+﻿@using eZeroOne.Common
+@using eZeroOne.Domain
+@{
+    ViewBag.Title = "Occupations";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $("#btnback").click(function () {
+                 window.location = "/Admin/PropertyAdmin/PropertyList";
+             });
+             
+             $(".icon-remove").click(function (e) {
+                 var id = $(this).attr("id");
+                 
+                 $("#ItemId").val(id);
+                
+             });
+             
+             $(".icon-edit").click(function (e) {
+                 var id = $(this).attr("id");
+                 var occupation = $(this).attr("occupation");
+                 $("#ItemId").val(id);
+                 $("#occupation").val(occupation);
+
+             });
+             
+             
+             $("#btndelete").click(function (e) {
+
+                 var id = $("#ItemId").val();
+                 if (id > 0) {
+
+                     var url = "/Admin/PropertyAdmin/RemoveOccupation?id=" + id;
+                     $.post(url, function () {
+                         window.location = "/Admin/PropertyAdmin/Occupations";
+                     });
+                     
+                  }
+                
+             });
+             
+             $("#btnadd").click(function (e) {
+
+                 var id = $("#ItemId").val();
+                 if ($("#occupation").val() != "") {
+
+                     var url = "/Admin/PropertyAdmin/AddOccupation?id=" + id + "&name=" + $("#occupation").val();
+                     $.post(url, function () {
+                         window.location = "/Admin/PropertyAdmin/Occupations";
+                     });
+
+                 }
+
+             });
+             
+             $(".icon-arrow-down").click(function (e) {
+                 var id = $(this).attr("id");
+                 var orderId = $(this).attr("order-id");
+                 if (orderId > 0) {
+                     $("#loader").show();
+                     orderId = parseInt(orderId) + 1;
+                     var url = "/Admin/PropertyAdmin/OrderOccupation?id=" + id + "&orderId=" + orderId;
+                     $.post(url, function () {
+                         window.location = "/Admin/PropertyAdmin/Occupations";
+                     });
+
+                 }
+
+             });
+
+             $(".icon-arrow-up").click(function (e) {
+                 var id = $(this).attr("id");
+                 var orderId = $(this).attr("order-id");
+                 if (orderId > 1) {
+                     $("#loader").show();
+                     orderId = parseInt(orderId) - 1;
+                     var url = "/Admin/PropertyAdmin/OrderOccupation?id=" + id + "&orderId=" + orderId;
+                     $.post(url, function () {
+                         window.location = "/Admin/PropertyAdmin/Occupations";
+                     });
+
+                 }
+
+             });
+             
+         });
+    </script>
+}
+
+<style>
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+<div id="loader" style="display:none"></div>
+
+@Html.Hidden("ItemId","0")
+
+<!-- delete record-->
+<div class="modal hide" id="deleteRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Delete Occupation</h3>
+    </div>
+    <div class="modal-body">
+        <span> Are you sure ? do you wish to delete this <span style="color:red;font-size:14px">Occupation</span> ?</span>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btndelete" class="btn btn-primary" data-dismiss="modal">Yes </a>
+    </div>
+</div>
+<!-- End delete-->
+
+<!-- add/edit record-->
+<div class="modal hide" id="editRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Add/Edit Occupation</h3>
+    </div>
+    <div class="modal-body">
+        <div class="control-group">
+            <div class="control-label">
+                <span> Occupation</span>
+            </div>
+            <div class="controls">
+                <input type="text" id="occupation" class="span3"/>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btneditcancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btnadd" class="btn btn-primary" data-dismiss="modal">Save </a>
+    </div>
+</div>
+<!-- End -->
+<section id="main">
+    <div class="body-text">
+<div class="container-fluid" >
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="qbox">
+                <h3><i class="pull-right"></i>Menu</h3>
+                 <a href="/Admin/PropertyAdmin/AccomodationTypes"> Accomodation types</a><br/>
+                <a href="/Admin/PropertyAdmin/AccomodationStandards"> Accomodation standards</a><br/>
+                <a href="/Admin/PropertyAdmin/FeatureGroup"> Feature groups</a><br/>
+                <a href="/Admin/PropertyAdmin/Features" class="active "> Features</a><br/>
+                <a  href="/Admin/PropertyAdmin/MealTypes" > Meal types</a><br/>
+                <a  href="/Admin/PropertyAdmin/Occupations" > Occupations</a><br/>
+                <a  href="/Admin/PropertyAdmin/TravelBy" > Travel by</a><br/>
+                    <a  href="/Admin/PropertyAdmin/DistrictInfo" > District Info</a><br/>
+                    <a  href="/Admin/PropertyAdmin/AddSliderImage" > Slider Image</a><br/>
+            </div>
+        </div>
+        <div class="span9">
+            
+            <div class=" qbox form-horizontal contact-info box">
+                <div>
+                    <table class="table table-bordered " style="background:white">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="large">
+                                    Occupation
+                                    <a style="float:right" href="#editRecord" data-toggle="modal" occupation="" id=0 > Add New</a>
+                                </th>                             
+                                                    
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                    var group = "";
+                                    var orderId = 1;
+                                 
+                            }
+                            @foreach (var item in (List<Designation>)ViewBag.Occupations)
+                            {
+                                <tr>
+                                    <td> @orderId</td>                                                                                       
+                                    <td>
+                                        @item.Name 
+                                    </td>
+                                    <td>
+                                        <a href="#editRecord" data-toggle="modal" class="icon-edit" occupation="@item.Name" id=@item.Id ></a>
+                                        <a href="#deleteRecord" data-toggle="modal" class="icon-remove" id=@item.Id ></a>
+                                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                                          <a style="cursor:default" class="icon-arrow-up" id=@item.Id order-id="@item.DisplayOrder" title="move up"></a>
+                                        <a style="cursor:default" class="icon-arrow-down" id=@item.Id order-id="@item.DisplayOrder" title ="move down"></a>
+                                    </td>
+                                </tr>
+                                orderId++;
+                            }
+                        </tbody>        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>
+

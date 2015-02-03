@@ -1,0 +1,24 @@
+/*
+Theme Name: Peach Realestate Theme
+Theme URI: 
+Description: Simple and Easy theme for your business
+Version: 1.0 
+Author: MyOrange
+Author URI: 
+*/
+@import url(font-awesome.css);
+@import url(bootstrap.min.css);
+@import url(bootstrap-responsive.css);
+@import url(select2.css);
+@import url(jquery.onebyone.css);
+@import url(animate.min.css);
+@import url(responsive-slider.css);
+@import url(theme.css);
+
+/*
+ * ===========================================
+ * original filename: style.css
+ * Note: All four CSS files above will be loaded 
+ * 		 from this single document. Please DO NOT alter
+ * 		 the order of which it appears in.
+ */

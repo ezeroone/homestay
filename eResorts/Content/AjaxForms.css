@@ -1,0 +1,113 @@
+﻿/* .formContainer
+{
+    width:600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.entry
+{
+    padding: 0 10px 10px;  
+}
+
+.formsTitle{  
+    font-weight: 700;  
+    font-size: 18px;  
+    line-height: 1.2em;  
+    border-bottom: 1px dotted #6b9ef1;  
+    color: #5f95ef;  
+    margin-bottom: 1em;
+    margin-left:5px;
+}
+
+.formContainer form div input
+{
+    width: 240px;  
+    padding: 6px;  
+    color: #949494;  
+    font-family: Arial,  Verdana, Helvetica, sans-serif;  
+    font-size: 12px;  
+    border: 1px solid #cecece;
+}
+
+.formContainer form div select
+{
+    width: 255px;  
+    padding: 6px;  
+    color: #949494;  
+    font-family: Arial,  Verdana, Helvetica, sans-serif;  
+    font-size: 12px;  
+    border: 1px solid #cecece;
+}
+
+.formContainer form div label
+{
+    display: block;  
+    color: #797979;  
+    font-weight: 700;  
+    line-height: 1.4em; 
+}
+
+.formContainer div textarea
+{
+    width: 550px;  
+    height: 80px;  
+    padding: 6px;  
+    color: #adaeae;  
+    font-family: Arial,  Verdana, Helvetica, sans-serif;  
+    font-style: italic;  
+    font-size: 12px;  
+    border: 1px solid #cecece;
+}
+
+.FormButton
+{
+    background: #6f9ff1;  
+    color: #fff;  
+    font-weight: 700;  
+    font-style: normal;  
+    border: 0;  
+    cursor: pointer;
+    padding: 2px 5px 2px 5px;
+}
+
+.FormButton:hover
+{
+    background: #79a7f1;
+} */
+
+div#formContainer
+{
+    width: 75%;
+    margin: 0em auto;
+}
+
+.round2
+{
+    /* 2/12 */
+    border-radius: 0.1666em;
+    -moz-border-radius: 0.166em; 
+    -webkit-border-radius: 0.166em;
+}
+
+div.editor-field input.jobFormInput[type="text"]
+{
+    padding: 0.3em;
+    width: 100%;
+}
+
+
+div.editor-field input.jobTitle[type="text"]
+{
+    color: #444444;
+    font-size: 1.666em; /* 20/12 */
+    font-weight: bold;
+}
+
+div.editor-field textarea
+{
+    height: 12.5em;
+    width: 100%;
+    font-size: 1.5em;
+}
+

@@ -1,0 +1,311 @@
+﻿@model eResorts.Models.SliderModel
+@{
+    ViewBag.Title = "AddSliderImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+}
+   <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $("#btnLink").click(function () {
+         
+            var url = "/Admin/PropertyAdmin/FindLatLong";
+            window.open(url, "Find location", "height=600,width=800,resizable=no");
+        });
+
+        $("#btnback").click(function () {
+            window.location = "/Admin/PropertyAdmin/PropertyList";
+        });
+       
+        $(".icon-remove").click(function (e) {
+            var id = $(this).attr("id");
+           $("#deleteId").val(id);
+           
+        });
+
+        $("#btndelete").click(function (e) {
+
+            var id = $("#deleteId").val();
+           if (id > 0 ) {
+                
+                $("#loader").show();
+                var url = "/Admin/PropertyAdmin/RemoveSliderImage?id=" + id ;
+
+                $.post(url, function () {
+                    window.location = "/Admin/PropertyAdmin/AddSliderImage";
+                });
+                
+               
+            }
+
+        });
+        
+
+        $(".icon-arrow-down").click(function (e) {
+            var id = $(this).attr("id");
+            var orderId = $(this).attr("order-id");
+            if (orderId > 0) {
+                $("#loader").show();
+                orderId = parseInt(orderId) + 1;
+                var url = "/Admin/PropertyAdmin/OrderSliderImage?id=" + id + "&orderId=" + orderId;
+                $.post(url, function () {
+                    window.location = "/Admin/PropertyAdmin/AddSliderImage";
+                });
+
+            }
+
+        });
+
+        $(".icon-arrow-up").click(function (e) {
+            var id = $(this).attr("id");
+            var orderId = $(this).attr("order-id");
+            if (orderId > 1) {
+                $("#loader").show();
+                orderId = parseInt(orderId) - 1;
+                var url = "/Admin/PropertyAdmin/OrderSliderImage?id=" + id + "&orderId=" + orderId;
+                $.post(url, function () {
+                    window.location = "/Admin/PropertyAdmin/AddSliderImage";
+                });
+
+            }
+
+        });
+
+
+    });
+</script>
+
+<style>
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+
+
+@Html.Hidden("deleteId","0")
+
+<!-- delete record-->
+<div id="loader" style="display:none"></div>
+<div class="modal hide" id="deleteRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Delete Place</h3>
+    </div>
+    <div class="modal-body">
+        <span> Are you sure ? do you wish to delete this <span style="color:red;font-size:14px">Image</span> ?</span>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btndelete" class="btn btn-primary" data-dismiss="modal">Yes </a>
+    </div>
+</div>
+<!-- End delete-->
+<section id="main">
+    <div class="body-text">
+<div class="container-fluid" >
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="qbox">
+                    <h3><i class="pull-right"></i>Menu</h3>
+                <a href="/Admin/PropertyAdmin/AccomodationTypes"> Accomodation types</a><br/>
+                <a href="/Admin/PropertyAdmin/AccomodationStandards"> Accomodation standards</a><br/>
+                <a href="/Admin/PropertyAdmin/FeatureGroup"> Feature groups</a><br/>
+                <a href="/Admin/PropertyAdmin/Features" class="active "> Features</a><br/>
+                <a  href="/Admin/PropertyAdmin/MealTypes" > Meal types</a><br/>
+                <a  href="/Admin/PropertyAdmin/Occupations" > Occupations</a><br/>
+                <a  href="/Admin/PropertyAdmin/TravelBy" > Travel by</a><br/>
+                    <a  href="/Admin/PropertyAdmin/DistrictInfo" > District Info</a><br/>
+                    <a  href="/Admin/PropertyAdmin/AddSliderImage" > Slider Image</a><br/>
+                </div>
+            </div>
+            <div class="span9">
+            <div class=" qbox form-horizontal contact-info">
+            <h3><i class="pull-right"></i>Add Slider images</h3>
+                <form action="@Url.Content("~/Admin/PropertyAdmin/SaveSliderImage")" method="post" enctype="multipart/form-data">
+                    @Html.HiddenFor(x => x.Id)
+                    
+                    <div class="control-group">
+                            <div class="control-label">
+                                <label for="file">Upload Image (940 * 341)* </label>
+                            </div>
+                            <div class="controls">
+                                <input type="file" name="file" id="file" />
+                            </div>
+
+                        </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="PlaceName">Place Name</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="PlaceName" id="PlaceName" />*@
+                            @Html.TextBoxFor(m=>m.PlaceName,new{@class="span8"})
+                        </div>
+
+                    </div>
+                     <div class="control-group">
+                        <div class="control-label">
+                            <label for="PlaceName">Description</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="PlaceName" id="PlaceName" />*@
+                            @Html.TextBoxFor(m=>m.ImageDescription,new{@class="span6"})
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="Distance">Location</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="Distance" class="span1" />*@
+                            @Html.TextBoxFor(m=>m.Location,new{@class="span5"})
+                            
+                        </div>
+
+                    </div>
+                 @*   <div class="control-group">
+                        <div class="control-label">
+                            <label for="Lat">Latitude/Longitude</label>
+                        </div>
+                        <div class="controls">
+                            
+                             @Html.TextBoxFor(m=>m.Latitude,new{@class="span4"})
+                             @Html.TextBoxFor(m=>m.Longitude,new{@class="span4"})
+                          
+                            <input type="button" id="btnLink" class="btn btn-primary" value="Find location" />
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="TimeTake">Time Take (hrs/mins)</label>
+                        </div>
+                        <div class="controls">
+                       
+                            <span class="help-inline"> 1 hr/ 45 mins</span>
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="TimeTake">Travel by</label>
+                        </div>
+                        <div class="controls">
+                          
+                        </div>
+
+                    </div>*@
+                    <div class="control-group">
+
+                        <div class="controls">
+                            <input type="submit" value="Add Image" class="btn btn-primary" />
+                            <input id="btnback" value="Back" class="btn" type="button" >
+                        </div>
+                    </div>
+                    <div class="box">
+                        @*<div class="box-title">
+                            <br />
+                        </div>*@
+                        <div>
+                               <table class="table table-bordered " style="background:white">
+                                            <thead>
+                                                <tr>
+                                                    <th class="small">
+                                                         Image
+                                                    </th>      
+                                                    <th class="small">
+                                                         Place Name
+                                                    </th>                          
+                                                    <th class="small">
+                                                        Description
+                                                    </th>
+                                                    <th class="small">
+                                                       Location
+                                                    </th>
+                                                    @*<th class="small">
+                                                        Latitude
+                                                    </th>
+                                                    <th class="small">
+                                                        Longitude
+                                                    </th>*@
+                                                    <th>
+                                                           Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Sliders)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @{
+                                                                var imageUrl = "/PropertyImages/SliderImages/"+item.ImageName;
+                                                            }
+                                                          <img src="@imageUrl" width="140" height="120"/>
+                                                        </td>                                                                                   
+                                                        <td>
+                                                            @item.PlaceName 
+                                                        </td>
+                                                        <td>
+                                                            @item.ImageDescription 
+                                                        </td>
+                                                       
+                                                        <td>
+                                                            @item.Location
+                                                        </td>
+                                                       
+                                                        <td>
+                                                            @{
+                                                                var editurl = "~/Admin/PropertyAdmin/AddSliderImage?id=" + @item.Id;
+                                                            }
+                                                            <a id="btnEdit" href="@Url.Content(editurl)" title="click to edit" class="icon-edit"></a>
+                                        
+                                                            @{
+                                                    var deleteurl = "~/Admin/PropertyAdmin/RemoveSliderImage?id=" + @item.Id;
+                                                            }
+                                                            <a href="#deleteRecord" data-toggle="modal" class="icon-remove" id=@item.Id  ></a>
+                                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                          <a style="cursor:default" class="icon-arrow-up" id=@item.Id order-id="@item.DisplayOrder" title="move up"></a>
+                                        <a style="cursor:default" class="icon-arrow-down" id=@item.Id order-id="@item.DisplayOrder" title ="move down"></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                         
+                                        </table>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+        </div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

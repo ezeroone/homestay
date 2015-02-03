@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>eResort-reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link id="switch_style" href="~/Content/css/real_estate.css" rel="stylesheet">
+	
+    <!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+	
+    <div class="container">
+
+        
+        <div class="row">
+				                          <div class="span4">
+		
+		
+				                              <div class="row">
+				                                  <h4 class="span3 well">Change location and criteria</h4>
+				                                  <div class="span3 well">
+				
+				                                      <form class="form-inline mini" style="margin-bottom: 0px;">
+				                                          <fieldset>
+				                                              <div class="row">
+				                                                  <div class="span3">
+				                                                      <div class="control-group">
+				                                                          <label for="focusedInput" class="control-label">Location</label>
+				                                                          <div class="controls">
+				                                                              <input type="text" value="Colombo" placeholder="Where do you want to live?" id="focusedInput" class="span2">
+				                                                          </div>
+				                                                      </div>	
+
+				                                                      <div class="row">
+				                                                          <div class="span3">							  
+				                                                              <div class="control-group">
+				                                                                  <label for="focusedInput" class="control-label">Radius</label>
+				                                                                  <div class="controls">
+				                                                                      <select class="span2">
+				                                                                          <option>This area only</option>
+				                                                                          <option>Within 1/4 mile</option>
+				                                                                          <option>Within 1/2 mile</option>
+				                                                                          <option>Within 1 mile</option>
+				                                                                          <option>Within 3 miles</option>
+				                                                                          <option>Within 5 miles</option>
+				                                                                          <option>Within 10 miles</option>
+				                                                                          <option>Within 15 miles</option>
+				                                                                          <option>Within 20 miles</option>
+				                                                                          <option>Within 30 miles</option>
+				                                                                          <option>Within 40 miles</option>
+				                                                                      </select>				
+				                                                                  </div>
+				                                                              </div>
+				                                                          </div>
+				                                                          <div class="span2 ">	
+				                                                              <div class="control-group">
+				                                                                  <label for="focusedInput" class="control-label">Property</label>
+				                                                                  <div class="controls">
+				                                                                      <select class="span2">
+				                                                                          <option>Any</option>
+				                                                                          <option>Houses</option>
+				                                                                          <option>Flats/ Apartments</option>
+				                                                                          <option>Bungalows</option>
+				                                                                          <option>Land</option>
+				                                                                          <option>Commercial property</option>
+				                                                                          <option>Other</option>
+				                                                                      </select>
+				                                                                  </div>
+				                                                              </div>		
+				                                                          </div>		
+				                                                      </div>	
+				                                                      <div class="row">						  
+				                                                          <div class="span3">							  
+				                                                              <div class="control-group">
+				                                                                  <label for="focusedInput" class="control-label">Bedrooms</label>
+				                                                                  <div class="controls">
+				                                                                      <select class="span2">
+				                                                                          <option>Any</option>
+				                                                                          <option>1</option>
+				                                                                          <option>2</option>
+				                                                                          <option>3</option>
+				                                                                          <option>4</option>
+				                                                                          <option>5+</option>
+				                                                                      </select>				
+				                                                                  </div>
+				                                                              </div>
+				                                                          </div>
+				                                                          <div class="span3">	
+				                                                              <div class="control-group">	
+				                                                                  <label for="focusedInput" class="control-label">Rent/Buy</label>
+				                                                                  <div class="controls">
+				                                                                      <select class="span2">
+				                                                                          <option>Any</option>
+				                                                                          <option>Rent</option>
+				                                                                          <option>Buy</option>
+				                                                                      </select>
+				                                                                  </div>
+				                                                              </div>		
+				                                                          </div>		
+					  
+				                                                          <div class="span3">							  
+				                                                              <div class="control-group">
+				                                                                  <label for="focusedInput" class="control-label">Price</label>
+				                                                                  <div class="controls">
+				                                                                      <select class="span1" style="width: 68px;">
+				                                                                          <option selected="selected" value="">Min</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1500000">1,500,000</option><option value="2000000">2,000,000</option><option value="3000000">3,000,000</option><option value="">Min</option>
+				                                                                      </select>
+
+				                                                                      <select class="span1 pull-right" style="width: 68px;">
+				                                                                          <option selected="selected" value="">Max</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1500000">1,500,000</option><option value="2000000">2,000,000</option><option value="3000000">3,000,000</option><option value="">Max</option>
+				                                                                      </select>									
+				                                                                  </div>
+				                                                              </div>
+				                                                          </div>
+	
+
+				                                                      </div>	
+					
+				                                                  </div>
+				                                                  <div class="row">	
+					
+				                                                      <div class="span2 pull-right" style="margin-top: 10px;">
+				                                                          <button class="btn btn-primary pull-right" type="submit">Search</button>
+
+				                                                      </div>
+				                                                  </div>						
+
+				                                              </div>
+
+				                                          </fieldset>
+				                                      </form>
+				                                  </div>
+				                              </div>
+		
+		
+				                              <div class="row">
+				                                  <h4 class="span3 well">Filters</h4>
+				                                  <div class="span3 well">
+		
+				                                      <h4>Property type:</h4>
+				                                      <ul class="nav">
+				                                          <li>
+				                                              <a class="active" href="#">Houses (12)</a>
+				                                              <ul>
+				                                                  <li><a href="#"> - Detached houses (11)</a></li>
+				                                                  <li><a class="active" href="#"> - Semi-detached houses (1)</a></li>
+				                                                  <li><a class="active" href="#"> - Terraced houses (1)</a></li>
+				                                              </ul>
+				                                          </li>
+				                                          <li><a href="#">Bungalows (5)</a></li>
+				                                          <li><a href="#">Land (2)</a></li>
+				                                      </ul>	
+				                                      <h4>Preowned & new homes:</h4>
+				                                      <ul class="nav">	
+				                                          <li><a href="#">Pre-owned homes (5)</a></li>
+				                                          <li><a href="#">Brand new homes (2)</a></li>
+				                                      </ul>	
+				                                      <h4>Outside space:</h4>
+				                                      <ul class="nav">	
+				                                          <li><a href="#">Garden (5)</a></li>
+				                                          <li><a href="#">Parking (2)</a></li>
+				                                      </ul>
+
+				                                  </div>
+				                              </div>
+				                              <div class="row">
+				                                  <h4 class="span3 well">Near Colombo</h4>
+				                                  <div class="span3  well">
+		
+				                                      <ul class="nav">
+			<li><a href="#">Ingiriya</a></li>
+			<li><a href="#">Kalutara</a></li>
+			<li><a href="#">Nugegoda</a></li>
+			<li><a href="#">Wattala</a></li>
+			<li><a href="#">Negombo</a></li>
+			<li><a href="#">Galle</a></li>
+			<li><a href="#">Matara</a></li>
+			<li><a href="#">Kandy</a></li>
+			
+		</ul>	
+
+				                                  </div>
+				                              </div>
+
+				                              <div class="row">
+				                                  <h4 class="span3 well">Popular searches</h4>
+				                                  <div class="span3  well">
+		
+				                                      <ul class="nav">
+				                                          <li><a href="#">Property for sale in Colombo</a></li>
+				                                          <li><a href="#">Houses for sale in Colombo</a></li>
+				                                          <li><a href="#">2 bedroom houses for sale in Colombo</a></li>
+				                                          <li><a href="#">3 bedroom houses for sale in Colombo</a></li>
+				                                          <li><a href="#">4 bedroom houses for sale in Colombo</a></li>
+				                                          <li><a href="#">5+ bedroom houses for sale in Colombo</a></li>
+				                                          <li><a href="#">Flats for sale in Colombo</a></li>
+				                                          <li><a href="#">Studio flats for sale in Colombo</a></li>
+				                                          <li><a href="#">1 bedroom flats for sale in Colombo</a></li>
+				                                          <li><a href="#">2 bedroom flats for sale in Colombo</a></li>
+				                                      </ul>	
+
+				                                  </div>
+				                              </div>	</div>
+	
+				                          <div class="span8">	
+	
+				                              <script>var map_locations = [{ "lat": 79.8333, "lng": 6.9167, "title": "7 bedroom house", "street": "The Vineyard, Richmond, TW10", "price": "3,350,000" }, { "lat": 51.451311, "lng": -0.313742, "title": "1 bedroom flat", "street": "Lower Mortlake Road, North Sheen", "price": "229,950" }, { "lat": 51.462311, "lng": -0.323742, "title": "2 bedroom apartment", "street": "Mount Ararat Road, Richmond", "price": "520,000" }, { "lat": 51.443821, "lng": -0.300747, "title": "2 bedroom house", "street": "The Shakespeare", "price": "550,000" }, { "lat": 51.452212, "lng": -0.298291, "title": "3 bedroom terraced house", "street": "Colombo, TW9", "price": "615,000" }, { "lat": 51.466506, "lng": -0.294333, "title": "3 bedroom semi-detached house", "street": "Beaumont Avenue, Richmond", "price": "1,100,000" }, { "lat": 51.462213, "lng": -0.293045, "title": "2 bedroom flat", "street": "The Lodge, Courtlands, Sheen Road, Richmond", "price": "399,950" }, { "lat": 51.462161, "lng": -0.292494, "title": "1 bedroom flat", "street": "Sheen Road, Richmond, TW9", "price": "219,950" }, { "lat": 51.47357, "lng": -0.281727, "title": "5 bedroom flat", "street": "Chelwood Gardens", "price": "1,250,000" }, { "lat": 51.466213, "lng": -0.293998, "title": "4 bedroom house", "street": "Lower Mortlake Road, Richmond, TW9", "price": "435,000" }]</script>
+				                              <div id="map_canvas1">
+		
+				                                  <iframe width="620" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=srilanka&amp;sll=1.302565,103.834694&amp;sspn=0.029947,0.038409&amp;ie=UTF8&amp;hq=&amp;hnear=Sri+Lanka&amp;ll=7.874265,80.771484&amp;spn=3.264389,4.389038&amp;z=8&amp;output=embed"></iframe>
+				                              </div><br />
+		
+		
+				                              <div class="row">
+				                                  <div class="span4 select_height">	Showing 1 - 16 of 255 results</div>
+				                                  <div class="pull-right">
+				                                      Sort by : 
+				                                      <select id="sort" name="sort" class="span2">
+				                                          <option value="pmrank">Popularity</option>
+				                                          <option value="price">Price: Low to High</option>
+				                                          <option value="-price">Price: High to Low</option>
+				                                      </select>
+				                                  </div>
+				                              </div>
+		
+				                              <ul class="thumbnails">
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_1.jpg" alt=""></a>
+				                                          <h5>Price : Rs.3,350,000</h5>
+				                                          <p><a href="#">7 bedroom house</a><br />The Vineyard, Richmond, TW10					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_2.jpg" alt=""></a>
+				                                          <h5>Price : Rs.229,950</h5>
+				                                          <p><a href="#">1 bedroom flat</a><br />Lower Mortlake Road, North Sheen					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_3.jpg" alt=""></a>
+				                                          <h5>Price : Rs.520,000</h5>
+				                                          <p><a href="#">2 bedroom apartment</a><br />Mount Ararat Road, Richmond					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_4.jpg" alt=""></a>
+				                                          <h5>Price : Rs.550,000</h5>
+				                                          <p><a href="#">2 bedroom house</a><br />The Shakespeare					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_5.jpg" alt=""></a>
+				                                          <h5>Price : Rs.615,000</h5>
+				                                          <p><a href="#">3 bedroom terraced house</a><br />Colombo, TW9					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_6.jpg" alt=""></a>
+				                                          <h5>Price : Rs.1,100,000</h5>
+				                                          <p><a href="#">3 bedroom semi-detached house</a><br />Beaumont Avenue, Richmond					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_7.jpg" alt=""></a>
+				                                          <h5>Price : Rs.399,950</h5>
+				                                          <p><a href="#">2 bedroom flat</a><br />The Lodge, Courtlands, Sheen Road, Richmond					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_8.jpg" alt=""></a>
+				                                          <h5>Price : Rs.219,950</h5>
+				                                          <p><a href="#">1 bedroom flat</a><br />Sheen Road, Richmond, TW9					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_9.jpg" alt=""></a>
+				                                          <h5>Price : Rs.1,250,000</h5>
+				                                          <p><a href="#">5 bedroom flat</a><br />Chelwood Gardens					</p>
+				                                      </div>
+				                                  </li>
+			
+						
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_10.jpg" alt=""></a>
+				                                          <h5>Price : Rs.435,000</h5>
+				                                          <p><a href="#">4 bedroom house</a><br />Lower Mortlake Road, Richmond, TW9					</p>
+				                                      </div>
+				                                  </li>
+			
+				
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_1.jpg" alt=""></a>
+				                                          <h5>Price : Rs.3,350,000</h5>
+				                                          <p><a href="#">7 bedroom house</a><br />The Vineyard, Richmond, TW10					</p>
+				                                      </div>
+				                                  </li>
+			
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_2.jpg" alt=""></a>
+				                                          <h5>Price : Rs.229,950</h5>
+				                                          <p><a href="#">1 bedroom flat</a><br />Lower Mortlake Road, North Sheen					</p>
+				                                      </div>
+				                                  </li>
+			
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_3.jpg" alt=""></a>
+				                                          <h5>Price : Rs.520,000</h5>
+				                                          <p><a href="#">2 bedroom apartment</a><br />Mount Ararat Road, Richmond					</p>
+				                                      </div>
+				                                  </li>
+			
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_4.jpg" alt=""></a>
+				                                          <h5>Price : Rs.550,000</h5>
+				                                          <p><a href="#">2 bedroom house</a><br />The Shakespeare					</p>
+				                                      </div>
+				                                  </li>
+			
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_5.jpg" alt=""></a>
+				                                          <h5>Price : Rs.615,000</h5>
+				                                          <p><a href="#">3 bedroom terraced house</a><br />Colombo, TW9					</p>
+				                                      </div>
+				                                  </li>
+			
+				                                  <li class="span2">
+				                                      <div class="thumbnail mini_property">
+				                                          <a href="#"><img src="~/Content/css/images/houses/house_6.jpg" alt=""></a>
+				                                          <h5>Price : Rs.1,100,000</h5>
+				                                          <p><a href="#">3 bedroom semi-detached house</a><br />Beaumont Avenue, Richmond					</p>
+				                                      </div>
+				                                  </li>
+			
+				                              </ul>
+		
+		
+				                              <div class="pagination">
+				                                  <ul>
+				                                      <li><a href="#">Prev</a></li>
+				                                      <li class="active">
+				                                          <a href="#">1</a>
+				                                      </li>
+				                                      <li><a href="#">2</a></li>
+				                                      <li><a href="#">3</a></li>
+				                                      <li><a href="#">4</a></li>
+				                                      <li><a href="#">5</a></li>
+				                                      <li><a href="#">6</a></li>
+				                                      <li><a href="#">7</a></li>
+				                                      <li><a href="#">8</a></li>
+				                                      <li><a href="#">9</a></li>
+				                                      <li><a href="#">10</a></li>
+				                                      <li><a href="#">Next</a></li>
+				                                  </ul>
+				                              </div>
+		
+				                          </div>
+	
+				                      </div>
+        
+
+</div> <!-- /container -->
+
+
+
+</body>
+
+</html>

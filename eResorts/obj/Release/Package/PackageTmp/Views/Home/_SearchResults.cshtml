@@ -1,0 +1,54 @@
+﻿@model List<eResorts.Models.PropertyModel>
+
+@{
+    var count = 1;
+    var model = Model;
+}
+
+
+    
+
+    <div class="row-fluid">
+        <h4>Search results </h4>
+    </div>
+    <div class="row-fluid hotproperties">
+        @foreach (var p in Model)
+        {
+            <div class="span4 set-equal-heights-js">
+                <div class="thumbnail">
+                    @*<span class="sticker sticker-hot">Nice Place</span>*@
+                    <a href="@p.PropertyUrl"><img src="@p.DefaultImageUrl" alt="Placeholder" class="thumbnail"></a>
+                    <div class="caption">
+                        <a href="@p.PropertyUrl" class="prop-title">@p.Name</a>
+                        <p class="size">Bedrooms : @p.NoOfRooms </p>
+                        <p class="size">City : @p.City</p>
+                        @*<p class="size">Features :@p.FeatureList</p>*@
+                        <p class="description">
+                            Accomodation Info :
+                            @if (p.Description.Length > 75)
+                            {
+                                <span>@p.Description.Substring(0, 74)</span>
+                            }
+                            else
+                            {
+                                <span>@p.Description</span>
+                            }  
+                            ...
+                        </p>
+                        <p class=" sticker sticker-sold">$ @p.DisplayPrice /Day</p>
+                        <ul class="list-btns">
+                            <li><a href="@p.PropertyUrl"><i class="icon-info-sign"></i>View Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="clearfix"></div>
+								
+    </div>
+
+
+
+<!--end of west pane span9-->
+
+

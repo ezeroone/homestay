@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eResortsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="eResortsModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="eResortsModel.Store.__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccommodationStandards" EntityType="eResortsModel.Store.AccommodationStandards" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccommodationTypes" EntityType="eResortsModel.Store.AccommodationTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Booking" EntityType="eResortsModel.Store.Booking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BookingCart" EntityType="eResortsModel.Store.BookingCart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clients" EntityType="eResortsModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companies" EntityType="eResortsModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyProfile" EntityType="eResortsModel.Store.CompanyProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="eResortsModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cuisine" EntityType="eResortsModel.Store.Cuisine" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customer" EntityType="eResortsModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Designations" EntityType="eResortsModel.Store.Designations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dining" EntityType="eResortsModel.Store.Dining" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailAttachments" EntityType="eResortsModel.Store.EmailAttachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailNotifications" EntityType="eResortsModel.Store.EmailNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Features" EntityType="eResortsModel.Store.Features" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Groups" EntityType="eResortsModel.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceNumber" EntityType="eResortsModel.Store.InvoiceNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invoices" EntityType="eResortsModel.Store.Invoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="eResortsModel.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MainCities" EntityType="eResortsModel.Store.MainCities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menus" EntityType="eResortsModel.Store.Menus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notifications" EntityType="eResortsModel.Store.Notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PasswordResetTokens" EntityType="eResortsModel.Store.PasswordResetTokens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentTypes" EntityType="eResortsModel.Store.PaymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Places" EntityType="eResortsModel.Store.Places" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PointOfInterests" EntityType="eResortsModel.Store.PointOfInterests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Property" EntityType="eResortsModel.Store.Property" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyImages" EntityType="eResortsModel.Store.PropertyImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurposeOfVisiting" EntityType="eResortsModel.Store.PurposeOfVisiting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Regions" EntityType="eResortsModel.Store.Regions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="eResortsModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tax" EntityType="eResortsModel.Store.Tax" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Titles" EntityType="eResortsModel.Store.Titles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transaction" EntityType="eResortsModel.Store.Transaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TravelBy" EntityType="eResortsModel.Store.TravelBy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserLogs" EntityType="eResortsModel.Store.UserLogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserMenuPermission" EntityType="eResortsModel.Store.UserMenuPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoles" EntityType="eResortsModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="eResortsModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersCompany" EntityType="eResortsModel.Store.UsersCompany" store:Type="Tables" store:Schema="dbo" store:Name="UsersCompany">
+      <DefiningQuery>SELECT 
+      [UsersCompany].[Id] AS [Id], 
+      [UsersCompany].[Company] AS [Company], 
+      [UsersCompany].[IsActive] AS [IsActive]
+      FROM [dbo].[UsersCompany] AS [UsersCompany]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UsersInRoles" EntityType="eResortsModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visitors" EntityType="eResortsModel.Store.Visitors" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Locations_Regions_Region_Id" Association="eResortsModel.Store.FK_Locations_Regions_Region_Id">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="AccommodationStandards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccommodationTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="false" />
+    <Property Name="DateTo" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="BookingCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BookingCartId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="false" />
+    <Property Name="DateTo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfJoin" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Web" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="VATRegNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="Region_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Cuisine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FoodType" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Foods" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfJoin" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Designations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Dining">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FoodId" Type="int" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="MealType" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmailAttachments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttachmentPath" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Attachment" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="ToAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="MailPort" Type="int" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="200" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="IsSend" Type="bit" Nullable="false" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="DivisionId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="SentDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Features">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InvoiceNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="InvoicePrefix" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="InvoiceNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="BillAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="BookedDate" Type="datetime" Nullable="false" />
+    <Property Name="PaidBy" Type="int" Nullable="false" />
+    <Property Name="PaymentMade" Type="bit" Nullable="false" />
+    <Property Name="Commision" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Region_Id" Type="int" />
+    <Property Name="Country_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="MainCities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Scale="10" />
+    <Property Name="Longitude" Type="decimal" Scale="10" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="IsRead" Type="bit" Nullable="false" />
+    <Property Name="Company" Type="nvarchar(max)" />
+    <Property Name="Weblink" Type="nvarchar(max)" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="PasswordResetTokens">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EncryptedForm" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PaymentTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PayBy" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="PlaceName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Distance" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Lat" Type="decimal" Nullable="false" Scale="10" />
+    <Property Name="Long" Type="decimal" Nullable="false" Scale="10" />
+    <Property Name="TimeTake" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="TravelBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointOfInterests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccommodationType" Type="int" Nullable="false" />
+    <Property Name="AccommodationStandard" Type="int" Nullable="false" />
+    <Property Name="DisplayPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="NoOfRooms" Type="int" Nullable="false" />
+    <Property Name="Squarefeet" Type="decimal" Scale="2" />
+    <Property Name="ActiveFrom" Type="datetime" />
+    <Property Name="ActiveTo" Type="datetime" />
+    <Property Name="IsPromotion" Type="bit" />
+    <Property Name="PromotionDescription" Type="nvarchar(max)" />
+    <Property Name="PromotionAmount" Type="decimal" Scale="2" />
+    <Property Name="PromotionType" Type="int" />
+    <Property Name="ShowOnSliderBanner" Type="bit" />
+    <Property Name="ClientId" Type="int" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="Tax" Type="decimal" Scale="2" />
+    <Property Name="Country" Type="int" />
+    <Property Name="MainCity" Type="int" />
+    <Property Name="MainCityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adderss" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Street" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="LandLinePrimary" Type="nvarchar" MaxLength="100" />
+    <Property Name="MobilePrimary" Type="nvarchar" MaxLength="100" />
+    <Property Name="LandLineSecondary" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileSecondary" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPerson1" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactPerson2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Latitude" Type="decimal" Scale="10" />
+    <Property Name="Longitude" Type="decimal" Scale="10" />
+    <Property Name="RouteTo" Type="nvarchar" MaxLength="500" />
+    <Property Name="MainTown" Type="nvarchar" MaxLength="100" />
+    <Property Name="DistanceFromMainTown" Type="decimal" />
+    <Property Name="SearchKeys" Type="varchar(max)" />
+    <Property Name="Features" Type="nvarchar" MaxLength="250" />
+    <Property Name="Interests" Type="nvarchar" MaxLength="250" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="OwnerDesignation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Location" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="PropertyImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="ImageDescription" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="200" />
+    <Property Name="DefaultImage" Type="bit" />
+  </EntityType>
+  <EntityType Name="PurposeOfVisiting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PurposeOfVisit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Regions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="IsIncluded" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="int" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Total" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="TravelBy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="LoggedId" />
+    </Key>
+    <Property Name="LoggedId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LoggedDate" Type="datetime" />
+    <Property Name="LogOff" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserMenuPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsViewed" Type="bit" Nullable="false" />
+    <Property Name="IsSave" Type="bit" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="IsUpdate" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsEmailActivated" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'eResorts.dbo.UsersCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="UsersCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Company" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visitors">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Name="VisitorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Locations_Regions_Region_Id">
+    <End Role="Regions" Type="eResortsModel.Store.Regions" Multiplicity="0..1" />
+    <End Role="Locations" Type="eResortsModel.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="Region_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

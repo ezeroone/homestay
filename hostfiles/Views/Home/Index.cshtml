@@ -1,0 +1,625 @@
+﻿@using eResorts.Models
+@using eZeroOne.Domain
+@model eResorts.Models.HotelSearchModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+ <link href="@Url.Content("~/Content/jsImgSlider/themes/6/js-image-slider.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/jsImgSlider/themes/6/mcVideoPlugin.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/jsImgSlider/themes/6/js-image-slider.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/jsImgSlider/generic.css")" rel="stylesheet" type="text/css" />
+   
+@*<link rel="stylesheet" href=@Url.Content("~/Content/gallery-master/css/blueimp-gallery.min.css")">*@
+
+
+<script src="@Url.Content("http://www.google.com/jsapi?autoload={'modules':[{name:'maps',version:3,other_params:'sensor=false'}]}")" type="text/javascript"></script>
+@* <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>*@
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/ipmapper.js")"></script>
+<style>
+    .culture {
+        color:  orange;
+    }
+    .nature {
+        color:  green;
+    }
+    .people {
+       
+        color: purple;
+    }
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+
+<script type="text/javascript">
+    var infoList = [];
+    
+    $(document).ready(function () {
+
+       // findLocation();
+        
+        $('#btnSearch').click(function () {
+           // $("#loader").show();
+            
+        //    $('#loader').dialog({
+        //        modal: true, width: 400,
+        //});
+        //    $('#loader').dialog('open');
+            
+            $("#Location").val($("#location").val());
+            var inputvalues = $('#frmHotelSearch').serialize();
+
+            var selectedPoi = new Array();
+            $(".poi:checked").each(function () {
+                selectedPoi.push($(this).attr('name'));
+            });
+
+            var selectedFeatures = new Array();
+            $(".feature:checked").each(function () {
+                selectedFeatures.push($(this).attr('name'));
+            });
+
+            var dataPost = { filter: inputvalues, poiList: selectedPoi, featureList: selectedFeatures };
+
+            $.post('/Home/GetFilteredHotelData/', inputvalues + '&poiList=' + selectedPoi + '&featureList=' + selectedFeatures, function (data) {
+               
+                
+                //loading partial view
+                $.post('@Url.Action("SearchResults", "Home")', function (results) {
+                    $('#detailsDiv').html(results);
+                });
+
+                LoadHotelsMap(data.city, data.hotels, data.radius);
+
+                $("#loader").hide();
+            });
+
+
+        });
+
+        //icon-info
+        
+        $(".icon-info").click(function (e) {
+            var id = $('#LocationId').val();
+            if (id > 0) {
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetLocation",
+                    data: { id: id },
+                    datatype: "json",
+                    traditional: true,
+                    success: function(data) {
+
+                        $("#bodyDiv").html(data);
+                    }
+                });
+            } else {
+                
+                $("#bodyDiv").html("<span style='color:red;font-size:14px'>Please select a location to see the Information</span>");
+            }
+        });
+        
+        $('#LocationId').change(function () {
+
+            var locId = $('#LocationId').val();
+            
+            $("#AccomodationTypeId option").each(
+                function (index, option) {
+                    $(this).remove();
+                }
+            );
+            
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetFileredAccomodationType",
+                    data: { distriictId: locId },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        $.each(data, function () {
+                            $("#AccomodationTypeId").append($("<option />").val(this['Id']).text(this['Name']));
+                        });
+                    }
+
+                });
+            
+                //$("#AccomodationTypeId").val(0);
+                $("#AccomodationTypeId option[value='0']").attr("selected", "selected");
+
+
+                $("#AccomodationStandardId option").each(
+            function (index, option) {
+                $(this).remove();
+            }
+        );
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetFileredAccomodationStandard",
+                    data: { distriictId: locId, accoType: 0 },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        $.each(data, function () {
+                            $("#AccomodationStandardId").append($("<option />").val(this['Id']).text(this['Name']));
+                        });
+                    }
+
+                });
+        });
+        $('#AccomodationTypeId').change(function () {
+
+            var locId = $('#LocationId').val();
+            var accotype = $('#AccomodationTypeId').val();
+            
+           // if (accotype != 0) {
+                $("#AccomodationStandardId option").each(
+             function (index, option) {
+                 $(this).remove();
+             }
+         );
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetFileredAccomodationStandard",
+                    data: { distriictId: locId, accoType: accotype },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        $.each(data, function () {
+                            $("#AccomodationStandardId").append($("<option />").val(this['Id']).text(this['Name']));
+                        });
+                    }
+
+                });
+            //}
+         
+        });
+      
+    });
+
+    function findLocation() {
+        
+        var lat = 6.92765378919141;
+        var long = 79.86236572265625;
+        
+       // $.get("http://api.ipinfodb.com/v2/ip_query.php?key=eb8be02ac7d20d14de2eeb51a93a9127719c69b8c9e74758c7d9dbe20c89ac80&timezone=false&format=json", function (response) {
+       $.get("http://ipinfo.io", function (response) {
+
+           // alert(response.ip)
+            try {
+                IPMapper.initializeMap("map_div");
+                IPMapper.addIPMarker(response.ip);
+            } catch (e) {
+                //handle error
+                alert("error");
+            }
+            
+            ////alert(response.ip);
+            //alert(response.country);
+            ////alert(response.loc);
+            
+            //var data = response.loc.split(',');
+            //alert(data[0]);
+            ////console.log(response.ip, response.country);
+            
+            //var mapDiv = document.getElementById('map_div');
+            //var map = new google.maps.Map(mapDiv, {
+            //    center: new google.maps.LatLng(lat, long),
+            //    zoom: 9,
+            //    mapTypeId: google.maps.MapTypeId.ROADMAP
+            //});
+            
+            //var markerCity = new google.maps.Marker({
+            //    map: map,
+            //    position: new google.maps.LatLng(data[0], data[1]),
+            //    title: response.city
+            //});
+            
+            //var iconFile = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+            //markerCity.setIcon(iconFile);
+            
+        }, "jsonp");
+  
+    }
+    
+    function LoadHotelsMap(city, hotels, radius) {
+        
+        var mapDiv = document.getElementById('map_div');
+        var distance = radius * 1609.3 * 0.621371; //10 miles in meters
+        var lat = 6.92765378919141;
+        var long = 79.86236572265625;
+        
+        if (city.Latitude != null) {
+
+            lat = city.Latitude;
+            long = city.Longitude;
+        }
+        var map = new google.maps.Map(mapDiv, {
+            center: new google.maps.LatLng(lat, long),
+            zoom: 9,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        
+        //var map = new google.maps.Map(mapDiv, {
+        //    center: new google.maps.LatLng(city.Latitude, city.Longitude),
+        //    zoom: 7,
+        //    mapTypeId: google.maps.MapTypeId.ROADMAP
+        //});
+        if (radius > 0 && city.Latitude != null) {
+            
+            var markerCity = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(city.Latitude, city.Longitude),
+                title: city.Name
+            });
+
+            var circle = new google.maps.Circle({
+                map: map,
+                radius: distance,
+                strokeColor: "#0054a8",
+                strokeWeight: 1,
+                fillColor: "#0054a8"
+            });
+            circle.bindTo('center', markerCity, 'position');
+            map.fitBounds(circle.getBounds());
+        }
+        //var markerCity = new google.maps.Marker({
+        //    map: map,
+        //    position: new google.maps.LatLng(city.Latitude, city.Longitude),
+        //    title: city.Name
+        //});
+       
+        //var circle = new google.maps.Circle({
+        //    map: map,
+        //    radius: distance,
+        //    strokeColor: "#0054a8",
+        //    strokeWeight: 1,
+        //    fillColor: "#0054a8"
+        //});
+        //circle.bindTo('center', markerCity, 'position');
+        //map.fitBounds(circle.getBounds());
+
+        if (hotels.length > 0) {
+
+            //var bounds = new google.maps.LatLngBounds();
+            //bounds.extend(new google.maps.LatLng(city.Latitude, city.Longitude));
+
+            for (var i = 0; i < hotels.length; i++) {
+
+                if (hotels[i].Latitude != null && hotels[i].Longitude != null) {
+
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(hotels[i].Latitude, hotels[i].Longitude),
+                        title: hotels[i].Name
+                    });
+
+                    //bounds.extend(new google.maps.LatLng(hotels[i].Latitude, hotels[i].Longitude));
+                    
+                    var url = "/Property/PropertyDetail?id=" + hotels[i].Id;
+                    var content = "Name:" + hotels[i].Name + "<br>Address:" + hotels[i].Adderss + "<br>Price:" + hotels[i].DisplayPrice + "<br>" + "<a style='color:blue' href=" + url + "> View Detail </a>";
+                    var imgUrl = hotels[i].DefaultImageUrl;
+                    var tblInfo = "<table>" +
+                           "<tr>" +
+                               //"<td><img width='90px' height='60x' src=" + imgUrl + "/></td>" +
+                              "<td></td>" +
+                               "<td>" + content + "</td>" +
+                            "</tr>" +
+                       "</table>";
+
+                    //alert(content);
+                    marker.infoWindow = new google.maps.InfoWindow({
+                        content: tblInfo
+                    });
+                    google.maps.event.addListener(marker, "click", function () {
+
+                        InfoClose();
+                        infoList.push(this);
+                        this.infoWindow.open(map, this);
+                    });
+
+                    var iconFile = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+                    marker.setIcon(iconFile);
+
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    function InfoClose() {
+        ///////////////////////////////////////////////////////////
+        // this routine will close an open infowindow when a new point is clicked
+        // maps V.3 does not automatically do this for you anymore so we do it here
+        if (!infoList.length) { return; }
+        for (i in infoList) {
+            infoList[i].infoWindow.close();
+        }
+
+        infoList = [];
+
+    } // infoClose
+
+</script>
+
+<div id="loader" style="display:none"></div>
+
+<div class="modal hide" id="showDetails">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Information</h3>
+    </div>
+    <div class="modal-body">
+        <div id="bodyDiv">
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn btn-success" data-dismiss="modal">Ok </a>
+     </div>
+</div>
+
+<body>
+    <form id="frmHotelSearch">
+        <section id="main">
+            <!-- Slider start-->
+            <div id="slide-wrapper">
+                <div id="banner">
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/nature1.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1">Place Name </span>								
+                        <span class="slide5Txt2">Kandy | Location</span>														
+                    </div>	
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/ayurveda1.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1">Place Name</span>								
+                        <span class="slide5Txt2">Ayurvedic  | Location</span>														
+                    </div>	  				
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/slide1.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1" data-animate="fadeInLeftBig">Place Name</span>								
+                        <span class="slide5Txt2" data-animate="fadeInRightBig">Hatton | Location</span>																						
+                    </div>	
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/slide2.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1">Place Name</span>								
+                        <span class="slide5Txt2">Seegriya| Location</span>														
+                    </div>	
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/slide3.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1">Place Name</span>								
+                        <span class="slide5Txt2">Peradeniya| Location</span>													
+                    </div>	
+                    <div class="oneByOne_item">                                 	
+                        <img src="/Content/img/slider/slide4.jpg" alt="Placeholder" class="bigImage">
+                        <span class="slide5Txt1">Place Name</span>								
+                        <span class="slide5Txt2">Pinnawela| Location</span>														
+                    </div>	
+                        
+                    @foreach (var img in (List<BannerImage>)ViewBag.SliderImages)
+                    {
+                        {
+                            var imgUrl = "/PropertyImages/SliderImages/" + img.ImageName;
+
+                            <div class="oneByOne_item">                                 	
+                                <img src="@imgUrl" alt="Placeholder" class="bigImage">
+                                <span class="slide5Txt1">@img.PlaceName</span>								
+                                <span class="slide5Txt2">@img.ImageDescription | @img.Location</span>														
+                            </div>
+                        }
+                    }
+                </div>    
+            </div>	
+            <!-- end slider -->	
+
+            <div class="body-text">
+
+                <div class="container-fluid">
+
+                    <div class="row-fluid">
+
+                        <!--west pane with width of span3-->
+                        <div class="span3">
+                            <div class="qbox">
+                                <h3><i class="icon-search pull-right"></i>Quick Search</h3>
+                            
+                                <div>
+                                    <div>
+                                        <label>
+                                            Location 
+                                            <span style="padding-top:2px;padding-right:20px;float:right">
+                                                <img src="/Content/img/info.png" width="25" height="25"/><a title="information about the location" href="#showDetails" data-toggle="modal" class="icon-info" >
+                                                                                                             Info
+                                                                                                         </a>
+                                            </span>
+                                            
+                                            @*<span style="float:right;padding-right:50px;"></span>*@
+                                        </label>
+                                         
+                                        @*<img src="/Content/img/info.png" />*@
+                                        @*<input id="location" type="text" placeholder="Overnight at..." class="span12" />
+                                        @Html.HiddenFor(m=>m.Location)*@
+                                        @Html.DropDownListFor(model => model.LocationId, (SelectList)ViewBag.LocationList, new { @class = "chzn-select", @style = "width:100%;" })
+
+                                    </div>
+                              
+                                    <br/>
+                                    <fieldset>
+                                        <legend small>Accommodation</legend small>
+                                        <div>
+                                            <label> Type</label>
+                                            @Html.DropDownListFor(model => model.AccomodationTypeId, (SelectList)ViewBag.AccomodationTypeList, new { @class = "chzn-select", @style = "width:100%;" })
+
+                                        </div>
+                                        <div>
+                                            <label> Standard</label>
+                                            @Html.DropDownListFor(model => model.AccomodationStandardId, (SelectList)ViewBag.AccomodationStandardList, new { @class = "chzn-select", @style = "width:100%;" })
+
+                                        </div>
+
+                                        <div>
+                                            <label>Radius extent in Km</label>
+                                            @Html.DropDownListFor(model => model.Radius, (SelectList)ViewBag.RadiusList, new { @class = "chzn-select", @style = "width:100%;" })
+
+                                        </div>
+                                        <div>
+                                            <label>Number of Rooms</label>
+                                            @Html.DropDownListFor(model => model.No_ofRooms, (SelectList)ViewBag.RoomList, new { @class = "chzn-select", @style = "width:100%;" })
+
+                                        </div>
+                                
+                                    </fieldset>
+                                    <br/>
+                                    <div>
+                                        <label>Price Range($)</label>
+
+                                        @Html.DropDownListFor(model => model.PriceFrom, (SelectList)ViewBag.MinPriceList, new { @class = "span1 chzn-select", @style = "width: 78px;" })
+                                        @Html.DropDownListFor(model => model.PriceTo, (SelectList)ViewBag.MaxPiceList, new { @class = "span1 chzn-select", @style = "width: 78px;" })
+
+
+                                    </div>
+                                    <a id="btnSearch" class="btn btn-primary btn-small ">Search</a>
+                                    <a href="/Property/Search" class="btn btn-info btn-small ">Detail Search</a>
+                                </div>
+                            
+                            </div>
+                            <div>
+                                <h4> Videos</h4>
+                                <div id="sliderFrame"  >
+                                    <div id="slider" >
+                                        @foreach (var u in (List<YoutubeUrl>)ViewBag.YoutubeUrls)
+                                        {
+                                            var url = "/PropertyImages/" + u.Id + "/" + u.FileName;
+                                        
+                                            <a class="video" href="@u.Url" title="">
+                                                <b data-src="@url">Image Slider</b>
+                                            </a>
+                                        }
+                                        @*<a class="video" href="http://www.youtube.com/watch?v=xziHFb9Xieo" title="Yala">
+                                        <b data-src="/Content/img/slider/yala1.jpg">Image Slider</b>
+                                    </a>
+                                    <a class="video" href="http://www.youtube.com/watch?v=ablCJGTLCow" title="Udawalawa">
+                                            <b data-src="/Content/img/slider/yala2.jpg">Udawalawa</b>
+                                    </a>
+                                    <a class="video" href="http://www.youtube.com/watch?v=AJYyp_t4NEc" title="sigiriya">
+                                        <b data-src="/Content/img/slider/sigiriya.jpg">sigiriya</b>
+                                    </a>*@
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                        
+                            </div>
+
+                           
+                            <div class="container-fluid appartment-listing" id="renting-map-js">
+                         
+                            </div>
+                        </div>
+                   
+                        <!--end of span3-->
+
+                        <!--east pane span9-->
+               
+                        <div class="span9 listing-js">
+                        
+                            <!-- Create Google Map: Center the map by positiong the latitude and longitude-->
+                        
+                            <div id="google-map-js" data-lat="7.5653" data-lng="80.4303" data-zoom="9">
+                                <div id="map_div" style="height:500px;">&nbsp;</div>
+                            </div>
+                            <p>
+                                District<img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" width="20px"/> &nbsp;
+                                Overnight Locations <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" width="20px"/> &nbsp;
+                                @*  <p style="color:burlywood; font-size:17px;">Plain tea bonna sudhooo...</p>
+                            <span>Homestay Direct</span>
+                            <img src="/Content/img/sudhoo.jpg" width="140" height="100"/>*@
+                            </p>
+                            <!-- end google map-->
+
+                            <!-- page heading -->
+                       
+
+                   
+
+                        </div>
+                        <!--west pane span9-->
+                        <div class="span9" id="detailsDiv">
+                        
+                        </div>
+
+                        <div  class="span9" style="float:right">
+                            <div class="row-fluid">
+                                <h4>Recently added </h4>
+                            </div>
+                            <div class="row-fluid hotproperties">
+                                @foreach (var p in (List<PropertyModel>)ViewBag.RecentlyAdded)
+                                {
+                                    <div class="span4 set-equal-heights-js">
+                                        <div class="thumbnail">
+                                        
+                                            <a href="@p.PropertyUrl"><img src="@p.DefaultImageUrl" alt="Placeholder" class="thumbnail"></a>
+                                            <div class="caption">
+                                                <a href="@p.PropertyUrl" class="prop-title">@p.Name</a>
+                                                <p class="size">Bedrooms : @p.NoOfRooms </p>
+                                                <p class="size">City : @p.City</p>
+                                      
+                                                <p class="description">
+                                                    Accomodation Info :
+                                                    @if (p.Description.Length > 75)
+                                                    {
+                                                        <span>@p.Description.Substring(0, 74)</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@p.Description</span>
+                                                    }  
+                                                    ...
+                                                </p>
+                                                <p class=" sticker sticker-sold">$ @p.DisplayPrice /Day</p>
+                                                <ul class="list-btns">
+                                                    <li><a href="@p.PropertyUrl"><i class="icon-info-sign"></i>View Details</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="clearfix"></div>
+								
+                            </div>
+                        </div>
+                        <!--end of west pane span9-->
+                    
+                     
+                    </div>
+                
+                    <div class="rounderCorner" style="height:100px;width:200px;float:right;border:blue solid 1px;background:#00ced1">
+                        <p class="sticker sticker-hot">post your property</p>
+                        <a class="sticker sticker-sold" href="/Account/ClientRegistration" style="color:#ffffff">Just click here</a>
+                    </div>	
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+    </form>
+</body>
+
+<div>&nbsp;</div>

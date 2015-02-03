@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eZeroOne.eShopping.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="eZeroOneeShoppingStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="eZeroOne.eShopping.Store.__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companies" EntityType="eZeroOne.eShopping.Store.Companies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyProfile" EntityType="eZeroOne.eShopping.Store.CompanyProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="eZeroOne.eShopping.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customer" EntityType="eZeroOne.eShopping.Store.Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Designations" EntityType="eZeroOne.eShopping.Store.Designations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailAttachments" EntityType="eZeroOne.eShopping.Store.EmailAttachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailNotifications" EntityType="eZeroOne.eShopping.Store.EmailNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="eZeroOne.eShopping.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Groups" EntityType="eZeroOne.eShopping.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceNumber" EntityType="eZeroOne.eShopping.Store.InvoiceNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invoices" EntityType="eZeroOne.eShopping.Store.Invoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemCategory" EntityType="eZeroOne.eShopping.Store.ItemCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemImages" EntityType="eZeroOne.eShopping.Store.ItemImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="eZeroOne.eShopping.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemSubCategory" EntityType="eZeroOne.eShopping.Store.ItemSubCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="eZeroOne.eShopping.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menus" EntityType="eZeroOne.eShopping.Store.Menus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notifications" EntityType="eZeroOne.eShopping.Store.Notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PasswordResetTokens" EntityType="eZeroOne.eShopping.Store.PasswordResetTokens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentTypes" EntityType="eZeroOne.eShopping.Store.PaymentTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Regions" EntityType="eZeroOne.eShopping.Store.Regions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Returns" EntityType="eZeroOne.eShopping.Store.Returns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="eZeroOne.eShopping.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="eZeroOne.eShopping.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShoppingCart" EntityType="eZeroOne.eShopping.Store.ShoppingCart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tax" EntityType="eZeroOne.eShopping.Store.Tax" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Titles" EntityType="eZeroOne.eShopping.Store.Titles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transaction" EntityType="eZeroOne.eShopping.Store.Transaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserLogs" EntityType="eZeroOne.eShopping.Store.UserLogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserMenuPermission" EntityType="eZeroOne.eShopping.Store.UserMenuPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoles" EntityType="eZeroOne.eShopping.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="eZeroOne.eShopping.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersCompany" EntityType="eZeroOne.eShopping.Store.UsersCompany" store:Type="Tables" store:Schema="dbo" store:Name="UsersCompany">
+      <DefiningQuery>SELECT 
+      [UsersCompany].[Id] AS [Id], 
+      [UsersCompany].[Company] AS [Company], 
+      [UsersCompany].[IsActive] AS [IsActive]
+      FROM [dbo].[UsersCompany] AS [UsersCompany]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UsersInRoles" EntityType="eZeroOne.eShopping.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Locations_Regions_Region_Id" Association="eZeroOne.eShopping.Store.FK_Locations_Regions_Region_Id">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Web" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="VATRegNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="Region_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfJoin" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Designations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmailAttachments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttachmentPath" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Attachment" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="ToAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="MailPort" Type="int" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="200" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="IsSend" Type="bit" Nullable="false" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="DivisionId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="SentDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="int" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="400" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfJoin" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar" MaxLength="100" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InvoiceNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="InvoicePrefix" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="InvoiceNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="BillAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PurchasedDate" Type="datetime" Nullable="false" />
+    <Property Name="PaidBy" Type="int" Nullable="false" />
+    <Property Name="PaymentMade" Type="bit" Nullable="false" />
+    <Property Name="IsDelivered" Type="bit" Nullable="false" />
+    <Property Name="DeliveredDate" Type="datetime" />
+    <Property Name="IsDelay" Type="bit" Nullable="false" />
+    <Property Name="DelayNotice" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ItemCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="ItemImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="SubCategoryId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaxPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="MinPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="DisplayPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="NoOfItems" Type="int" Nullable="false" />
+    <Property Name="ROLevel" Type="int" Nullable="false" />
+    <Property Name="ActiveFrom" Type="datetime" Nullable="false" />
+    <Property Name="ActiveTo" Type="datetime" Nullable="false" />
+    <Property Name="IsPromotion" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="PromotionDesc" Type="nvarchar(max)" />
+    <Property Name="PromotionAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PromotionType" Type="int" Nullable="false" />
+    <Property Name="ShowOnSliderBanner" Type="bit" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="Tax" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="ItemSubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubCatName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Region_Id" Type="int" />
+    <Property Name="Country_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="IsRead" Type="bit" Nullable="false" />
+    <Property Name="Company" Type="nvarchar(max)" />
+    <Property Name="Weblink" Type="nvarchar(max)" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="PasswordResetTokens">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EncryptedForm" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PaymentTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PayBy" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Regions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Returns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="ReturnedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobsNotification" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="ShoppingCartRefId" Type="uniqueidentifier" />
+    <Property Name="IsInvoiced" Type="bit" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="IsIncluded" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="int" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Total" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="LoggedId" />
+    </Key>
+    <Property Name="LoggedId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="LoggedDate" Type="datetime" />
+    <Property Name="LogOff" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserMenuPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsViewed" Type="bit" Nullable="false" />
+    <Property Name="IsSave" Type="bit" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="IsUpdate" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsEmailActivated" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'eShopping.dbo.UsersCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="UsersCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Company" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Locations_Regions_Region_Id">
+    <End Role="Regions" Type="eZeroOne.eShopping.Store.Regions" Multiplicity="0..1" />
+    <End Role="Locations" Type="eZeroOne.eShopping.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="Region_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

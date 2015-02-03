@@ -1,0 +1,163 @@
+﻿@model eResorts.Models.ImageViewModel
+@{
+    ViewBag.Title = "AddImages";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+   <script type="text/javascript">
+       $(document).ready(function () {
+           
+        $("#btnback").click(function () {
+            window.location = "/Clients/ClientProperty/PropertyList";
+        });
+       });
+    </script>
+}
+<style>
+          #propertyImages {
+
+           
+            width: 800px;
+            font: small Verdana, sans-serif;
+            }
+ 
+
+ 
+            #propertyImages #main {
+
+            margin: 0;
+
+            list-style: none;
+            }
+ 
+            #propertyImages #main li p {
+            margin: 0;
+            
+            }
+ 
+
+ 
+            #propertyImages #main {
+            padding-left: 20px;
+            }
+            #propertyImages #main li {
+            float: left;
+            width: 120px;
+            margin: 0 40px 0 0;
+            border: 1px solid blue;
+            }
+            #propertyImages #main li img {
+            display: block;
+            height:80px !important;
+            width:100px !important;
+            }
+ 
+ 
+            /* Backgrounds and colors */
+ 
+            #propertyImages #main li {
+            color: #000000;
+            margin-bottom: 0.5em;
+            }
+            #propertyImages #main li p {
+            padding: 0.5em 1em;
+            }
+
+
+
+
+</style>
+<section id="main">
+    <div class="body-text">
+    <div class="container-fluid" >
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="qbox">
+                    <h3><i class="pull-right"></i>Menu</h3>
+                    <a  href="/Clients/ClientProperty/Addproperty" class="active"> Add Property</a><br/>
+                    <a href="/Clients/ClientProperty/PropertyList"> Property List</a>
+                </div>
+            </div>
+            <div class="span9">
+                <div class=" qbox form-horizontal contact-info">
+                    <h3><i class="pull-right"></i>Add Images for : @ViewBag.Property</h3>
+                    <form action="/Clients/ClientProperty/UploadImage" method="post" enctype="multipart/form-data">
+                        @Html.HiddenFor(x => x.Id)
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label for="file">Upload Image (620 * 413 )</label>
+                            </div>
+                            <div class="controls">
+                                <input type="file" name="file" id="file" />
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label for="ImageDescription">Image Description</label>
+                            </div>
+                            <div class="controls">
+                                <input type="text" name="ImageDescription" />
+                                Is Default Image &nbsp;<input type="checkbox" name="DefaultImage" value ="DefaultImage"/>
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+
+                            <div class="controls">
+                                <input type="submit" value="Add Image" class="btn btn-primary" />
+                                <input id="btnback" type="button" value="Back" class="btn" />
+                                @*<a href="/Clients/ClientProperty/PropertyList" class="btn">Back</a>*@
+                            </div>
+                        </div>
+           
+
+                    </form>
+                </div>
+                         <div class="">
+                        @*<div class="box-title">
+                            <br />
+                        </div>*@
+                        <div id="propertyImages">
+                            
+                            <ul id="main">
+                                @foreach (var item in Model.ImageList)
+                                {
+                                    <li>
+                                        <p>
+                                            @{
+                                                //var index=item.ImagePath.LastIndexOf('\\');
+                                                string fileName = item.ImagePath;
+                                                var imgPath = "~/PropertyImages/" + Model.Id + "/thumbs/";
+                                                var url = Url.Content(imgPath + fileName);
+                                            }
+                                            <img alt="" src="@url" height="100" width="100" />
+                                        </p>
+                                        <p class="desc">
+                                            @{
+                                    var deleteurl = "/Clients/ClientProperty/RemoveImage?imageId=" + item.Id + "&propertyId=" + Model.Id;
+                                            }
+                                            <a id="btnSend" href="@deleteurl" class="btn btn-primary btn-mini">Delete</a>
+                                        </p>
+                                    </li>
+                                }
+                            </ul>
+
+
+
+
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+        </div>
+</div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

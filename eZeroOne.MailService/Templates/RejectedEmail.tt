@@ -1,0 +1,23 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rejected Email (Property approval)</title>
+</head>
+<body>
+	
+	<p>Dear <# Write(UserName); #>,</p>
+	
+	<p>This is to inform you, that your <a href="<# Write(Link); #>" style="background-color: lightblue; padding:5px;"><span style="font-weight:bold;">property</span></a> will not be approved due to following reasons. please correct those and send for approval again</p>
+	<p>	"<# Write(Reason); #>"</p>
+	<br/>
+	<p>Thanks,
+	 <br/>
+	Admin <br/>
+	
+</body>
+</html>

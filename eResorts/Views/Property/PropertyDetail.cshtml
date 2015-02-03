@@ -1,0 +1,781 @@
+﻿@model eResorts.Models.PropertyModel
+@{
+    ViewBag.Title = "PropertyDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <link href="@Url.Content("~/Content/AjaxForms.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css"/>
+
+<link rel="stylesheet" href="@Url.Content("~/Content/basicslider/bjqs.css")">
+<!-- demo.css contains additional styles used to set up this demo page - not required for the slider -->
+<link rel="stylesheet" href="@Url.Content("~/Content/basicslider/demo.css")">
+
+<link href="@Url.Content("~/Content/jsImgSlider/themes/5/js-image-slider.css")" rel="stylesheet" type="text/css" />
+   
+<script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/basicslider/js/bjqs-1.3.min.js")"></script>
+<script src="@Url.Content("~/Content/jsImgSlider/themes/5/js-image-slider.js")" type="text/javascript"></script>
+<script src="@Url.Content("http://www.google.com/jsapi?autoload={'modules':[{name:'maps',version:3,other_params:'sensor=false'}]}")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.maxlength.js")" type="text/javascript"></script>
+       
+
+<script type="text/javascript">
+    var infoList = [];
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    $(document).ready(function () {
+
+       
+       
+        $("#msg").hide();
+      
+        $('a[rel=tooltip]').tooltip();
+        var propId = '@Model.Id';
+       // $('#comment').maxlength({ max: 300 });
+
+         var url = '/Property/GetPropertylocation?propertId=' + propId;
+
+         $.post(url, function (data) {
+             LoadHotelsMap(data.city, data.hotels, data.radius, data.district);
+         });
+         //
+
+         $("#weatherId").click(function (e) {
+
+             openWeather();
+         });
+
+         $("#cloudId").click(function (e) {
+
+             openCloudinaryView();
+         });
+        
+         $("#btnAdd").click(function (e) {
+             var id = '@Model.Id';
+             //alert(id);
+             var name = $("#name").val();
+             var email = $("#email").val();
+             var comment = $("#comment").val();
+             if (id > 0 && name != "" && email != "" && comment!="") {
+                 $.ajax({
+                     type: "post",
+                     url: "/Property/AddReviewComment",
+                     data: {userName:name,email:email,comment:comment, propertyId: id },
+                     datatype: "json",
+                     traditional: true,
+                     success: function (data) {
+                         $("#msg").show();
+                         window.location = "/Property/PropertyDetail?id=" + id;
+                     }
+                 });
+             }
+         });
+        
+        //
+         $(".btn-link").click(function (e) {
+             var id = $(this).attr("id");
+             if (id > 0) {
+                 $.ajax({
+                     type: "GET",
+                     url: "/Property/GetReviewComment",
+                     data: { id: id },
+                     datatype: "json",
+                     traditional: true,
+                     success: function (data) {
+                         $("#bodyDiv").html(data.Comment + "<br/><br/>- " + data.Name + "<br/> ( " + data.Email + " )");
+                      
+                     }
+                 });
+             }
+         });
+     });
+
+     directionsDisplay = new google.maps.DirectionsRenderer();
+     function LoadHotelsMap(city, hotels, radius, district) {
+
+         // directionsDisplay = new google.maps.DirectionsRenderer();
+
+         var t = $("#geoLoc").html();
+         t = t + " of " + district.Name;
+         $("#District").val(district.Name);
+
+         $("#geoLoc").html(t);
+
+         var mapDiv = document.getElementById('map_div');
+         var distance = radius * 1609.3 * 0.621371;
+
+         var map = new google.maps.Map(mapDiv, {
+             center: new google.maps.LatLng(city.Latitude, city.Longitude),
+             zoom: 5,
+             mapTypeId: google.maps.MapTypeId.ROADMAP
+         });
+
+         //this is for district
+         var iconDis = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+         var markerDistrict = new google.maps.Marker({
+             map: map,
+
+             position: new google.maps.LatLng(district.Latitude, district.Longitude),
+             title: district.Name
+         });
+         markerDistrict.setIcon(iconDis);
+
+         //this is for city
+         var mainContent = "Name:" + city.Name;
+         var icon = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+
+         var markerCity = new google.maps.Marker({
+             map: map,
+
+             position: new google.maps.LatLng(city.Latitude, city.Longitude),
+             title: city.Name
+         });
+         markerCity.setIcon(icon);
+
+         //alert("hhhh");
+         var circle = new google.maps.Circle({
+             map: map,
+             radius: distance,
+             strokeColor: "#0054a8",
+             strokeWeight: 1,
+             fillColor: "#0054a8"
+         });
+
+         markerCity.infoWindow = new google.maps.InfoWindow({
+             content: mainContent
+         });
+
+
+         google.maps.event.addListener(markerCity, "click", function () {
+
+             InfoClose();
+             infoList.push(this);
+             this.infoWindow.open(map, this);
+         });
+
+         circle.bindTo('center', markerCity, 'position');
+         map.fitBounds(circle.getBounds());
+
+         if (hotels.length > 0) {
+
+          
+             for (var i = 0; i < hotels.length; i++) {
+
+                 if (hotels[i].Latitude != null && hotels[i].Longitude != null) {
+
+                     var marker = new google.maps.Marker({
+                         map: map,
+                         position: new google.maps.LatLng(hotels[i].Latitude, hotels[i].Longitude),
+                         title: hotels[i].PlaceName
+                     });
+
+                  
+                     var content = "Name:" + hotels[i].PlaceName + "<br>Distance:" + hotels[i].Distance + " KM" + "<br>Duration:" + hotels[i].TimeTake;
+                     var imgUrl = "~/Content/img/demo/apt/apt1.jpg";
+                     var tblInfo = "<table>" +
+                         "<tr>" +
+                         //"<td> <img width='50px' height='40x' src=" + imgUrl + "/></td>" +
+                         "<td>" + content + "</td>" +
+                         "</tr>" +
+                         "</table>";
+
+                     //alert(content);
+                     marker.infoWindow = new google.maps.InfoWindow({
+                         content: tblInfo
+                     });
+                     google.maps.event.addListener(marker, "click", function () {
+
+                         InfoClose();
+                         infoList.push(this);
+                         this.infoWindow.open(map, this);
+                     });
+
+                     var iconFile = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+                     marker.setIcon(iconFile);
+
+
+                 }
+
+             }
+
+         }
+
+
+     }
+
+     function calcRoute(destLat, desLon) {
+         var start = new google.maps.LatLng(7.162383, 79.870434);
+         var end = new google.maps.LatLng(destLat, desLon);
+
+         var request = {
+             origin: start,
+             destination: end,
+             travelMode: google.maps.TravelMode.DRIVING
+         };
+
+         directionsService.route(request, function (response, status) {
+             alert(status);
+             if (status == google.maps.DirectionsStatus.OK) {
+                 directionsDisplay.setDirections(response);
+             }
+         });
+     }
+
+
+     function InfoClose() {
+         ///////////////////////////////////////////////////////////
+         // this routine will close an open infowindow when a new point is clicked
+         // maps V.3 does not automatically do this for you anymore so we do it here
+         if (!infoList.length) { return; }
+         for (i in infoList) {
+             infoList[i].infoWindow.close();
+         }
+
+         infoList = [];
+
+     } // infoClose
+
+     function openWeather() {
+         var location = $("#District").val();
+         var url = "http://www.weatherchannel10.com/lk/" + location + ".html";
+         window.open(url, null, "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+        
+     }
+     function openCloudinaryView() {
+         var url = "http://www.meteo.gov.lk/index.php?option=com_phocagallery&view=category&id=3%3Acloud-imagery&Itemid=85&lang=en";
+         window.open(url, null, "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+
+     }
+
+     function openPopup(url) {
+         window.open(url, null, "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+
+     }
+
+     function openbusRoute() {
+         window.open("http://www.ntc.gov.lk/sub_pgs/projects_1.html", null, "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+
+     }
+     function openTrainRoute() {
+         window.open("http://podimenike.blogspot.com/2012/09/time-table-at-colombo-fort-main-line.html", null, "height=600,width=800,status=yes,toolbar=no,menubar=no,location=no");
+
+     }
+     function startTime() {
+         var today = new Date();
+         var h = today.getHours();
+         var m = today.getMinutes();
+         var s = today.getSeconds();
+         // add a zero in front of numbers<10
+         var offset = 5.50;
+         // create Date object for current location
+         var d = new Date();
+         // convert to msec
+         // add local time zone offset 
+         // get UTC time in msec
+         var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+         // create new Date object for different city
+         // using supplied offset
+         var nd = new Date(utc + (3600000 * offset));
+
+         // return time as a string
+         //return "The local time in " + city + " is " + nd.toLocaleString();
+
+         m = checkTime(m);
+         s = checkTime(s);
+         //document.getElementById('spnTime').innerHTML = today.toLocaleString();//+ ", Time : " + h + ":" + m + ":" + s;
+         document.getElementById('spnTime').innerHTML = nd.toLocaleString();//+ ", Time : " + h + ":" + m + ":" + s;
+         document.getElementById('spnLocalTime').innerHTML = "[ Local Time : " + nd.toLocaleTimeString() + " ]";//" [ Local Time : " +  h + ":" + m + ":" + s +" ]";
+         
+         t = setTimeout(function () { startTime() }, 500);
+     }
+
+     function checkTime(i) {
+         if (i < 10) {
+             i = "0" + i;
+         }
+         return i;
+     }
+
+
+</script>
+<script>
+    jQuery(document).ready(function ($) {
+
+        $('#banner-fade').bjqs({
+            height: 300,
+            width: 420,
+            responsive: true
+        });
+
+    });
+</script>
+
+<div class="modal hide" id="showDetails">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Review Comment</h3>
+    </div>
+    <div class="modal-body">
+        <div id="bodyDiv">
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn btn-success" data-dismiss="modal">Ok </a>
+    </div>
+</div>
+
+<!-- add/edit record-->
+<div class="modal hide" id="add-reviews">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Add Review Comments</h3>
+    </div>
+    <div class="modal-body ">
+        <div class="span5">
+            <table style="width:100%">
+            <tr>
+                <td><span>User Name : *</span></td>
+                <td><input type="text" id="name" placeholder=" your username"/> </td>
+            </tr>
+            <tr>
+                <td> <span>E-Mail : *</span></td>
+                <td> <input type="text" id="email" placeholder="yourname@mail.com"/>  </td>
+            </tr>
+            
+            <tr>
+                <td> <span>Comments : *</span></td>
+                <td>
+                 <textarea rows="4" cols="50"  id="comment"  style="width:250px" placeholder="enter you valid comments should help to know about this place"></textarea>
+                </td>
+            </tr>
+        </table>
+        
+        </div>
+        
+       
+        
+    </div>
+    <div class="modal-footer">
+        <span id="msg" style="color:red;display:none"> Your comment will be published with in 24 hours.Thanks</span>
+        <a href="#" id="btneditcancel" class="btn" data-dismiss="modal">Ok </a>
+        <a href="#" id="btnAdd" class="btn btn-success" >Add </a>
+      
+    </div>
+</div>
+<!-- End -->
+
+<body onload="startTime()">
+    <section id="main">
+        @Html.Hidden("District", "Colombo")
+        <div class="body-text">
+            <div class="container-fluid">
+                <div class="row-fluid">
+
+                    <div class="span8">
+                        <br />
+                        <h4 class ="info">
+                            <b style="color:#49AFCD"> @Model.Name</b>
+                            
+                        </h4>
+
+                     
+
+                        <div id="sliderFrame" style="width: 550px;">
+                            <div id="ribbon"></div>
+                            <div id="slider" style="width: 550px;">
+
+                                @if (!Model.Images.Any())
+                                {
+                                    <a class="lazyImage" href="/PropertyImages/1/thumbs/room_0.jpg" title= @Model.Name>
+                                        <img src="/PropertyImages/1/thumbs/room_0.jpg"
+                                             data-big="/PropertyImages/1/thumbs/room_0.jpg"
+                                     
+                                             data-description=@Model.Name>
+                                    </a>
+                                   
+                                    
+                                 
+                                }
+                                else
+                                {
+                                    foreach (var img in Model.Images)
+                                    {
+                                        <a class="lazyImage" href=@img.ImagePath  title=@img.ImageDescription>
+                                            <img src="@img.ImagePath">
+                                        </a>
+                                    
+                                    }
+
+                                }
+
+   
+                            </div>
+
+                            <div id="thumbs" style="width: 550px;">
+                                @if (!Model.Images.Any())
+                                {
+                                    <div class="thumb">
+                                        <img src="/PropertyImages/1/thumbs/room_0.jpg" /></div>
+                                }
+                                else
+                                {
+                                    foreach (var img in Model.Images)
+                                    {
+                                    
+                                    <div class="thumb">
+                                        <img src="@img.ImagePath" /></div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        
+                         <!-- end slider -->
+
+                        <!-- about property -->
+                        <div class="row-fluid property-info">
+                            <br />
+                            <h4 class="info"><strong>Accommodation Information</strong> (as provided by the owner)</h4>
+                            <p class="description" style="text-align:justify">
+                                @Model.Description.ToLower()
+
+                            </p>
+                            @*<h4 class="info"><strong>About Owner</strong></h4>
+                        <p class="description">
+                            @Model.AboutOwner
+                        </p>*@
+                            <h4 class="info"><b>Key Features</b></h4>
+                            <ul class="property-info">
+                                <li>@Model.FeatureList</li>
+                            </ul>
+                            <h4 class="info"><b>Menus</b></h4>
+
+                            <div class="property-info">
+                                <ul>
+                                    @{
+                                        var mealCount = 1;
+                                    }
+                                    <li>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <ul>
+                                                        @foreach (var p in Model.Meals)
+                                                        {
+                                                            if (p.Meals.Any())
+                                                            {
+                                                            <li><strong><b style="color:#49AFCD">@p.MealType </b></strong>
+                                                                <br />
+                                                                <table>
+                                                                    @foreach (var p1 in p.Meals)
+                                                                    {
+                                                                        <tr>
+                                                                            <td style="width: 250px; text-align: left">&nbsp;&nbsp;<b>&#8226;&nbsp;</b>
+                                                                                <span style="padding-left:10px;">@p1.MealType</span>
+                                                                            </td>
+                                                                            <td style="width: 100px; text-align: right">$ @p1.Price
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
+                                                                </table>
+                                                            </li>
+                                                            }
+
+                                                            mealCount = mealCount + 1;
+                                                        }
+                                                    </ul>
+                                                </td>
+                                                <td valign="middle">
+
+                                                    <div class="rounderCorner">
+                                                        @if (!string.IsNullOrWhiteSpace(Model.MealImage))
+                                                        {
+                                                            <img src="@Model.MealImage" width="120" height="100" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="/Content/img/dining.jpg" width="120" height="100" />
+                                                        }
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <h4 class="info"><b>Contact </b>  <b id="spnLocalTime" style="width:200px;font-style:normal;color:#D36F03;font-size:small"></b>
+                               
+                            </h4>
+                            
+                            <ul class="property-info">
+                                <li>
+                                    <table>
+                                        <tr>
+                                            <td>&nbsp;&nbsp;<img src="@Model.ImageName" width="60" height="50" />
+                                            </td>
+                                            <td>&nbsp;&nbsp;<strong> @Model.ContactPerson1 :<br />
+                                                                &nbsp;<img src="/Content/img/landline.png" width="12" height="12"><strong> Land line:  @Model.LandLinePrimary </strong> <br/>
+                                                               &nbsp; <img src="/Content/img/phone.png" width="12" height="12"> <strong>  Mobile : @Model.MobilePrimary </strong>
+
+                                                            </strong>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                            <h4 class="info"><b>Local Language interpreter(s)</b></h4>
+                            <ul class="property-info">
+                                @{
+                                    var conTcount = 1;
+                                }
+                                <li>
+                                    <table>
+
+                                        @foreach (var t in Model.Translators)
+                                        {
+                                            <tr>
+                                                <td>&nbsp;&nbsp;<img src="@t.ImageName" width="60" height="50" /></td>
+                                                <td>
+                                                    <span>
+                                                        <strong>&nbsp;&nbsp; @t.Name (@t.Language) :</strong><br />
+                                                        &nbsp;<img src="/Content/img/landline.png" width="12" height="12"> Land Line: @t.Landline <br/>
+                                                          &nbsp; <img src="/Content/img/phone.png" width="12" height="12"> Mobile: @t.Mobile
+                                                    </span>
+                                                </td>
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">&nbsp;</td>
+                                            </tr>
+                                            conTcount = conTcount + 1;
+                                        }
+                                    </table>
+                                </li>
+                            </ul>
+                            <div>
+                                <p class="asking-price">
+                                    <span>Asking Price</span> $ @Model.DisplayPrice /Day &nbsp;&nbsp;
+                                @{
+                                    var url = "/Property/Booking?propertyId=" + Model.Id;
+                                }
+                                    <a class="btn btn-primary" href="@url" id="btnBook">Make Booking</a>
+
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                        <!-- end about property -->
+                    </div>
+                    <!-- end span8 -->
+                    <div class="span4">
+                        <!--key features-->
+                        <br />
+                        <h4>Accommodation Details</h4>
+                        <div class="property-info">
+                            <ul class="property-info">
+                                <li><strong>Rooms:</strong> @Model.NoOfRooms </li>
+                                <li><strong>Address :</strong> @Model.Adderss, @Model.Street, @Model.City</li>
+                                <li><strong>Bus route :</strong> <a href="#" onclick="openbusRoute()"> View Route</a></li>
+                                <li><strong>Train Schedule :</strong> <a href="#"onclick="openTrainRoute()"> View Schedule</a></li>
+                               @* <li><strong>Add Reviews :</strong> </li>*@
+
+                                <li><strong><span id="spnTime" class="" style="color:#E26300"></span></strong></li>
+                            </ul>
+                        </div>
+
+                        <!--divider-->
+                        <div class="divider"></div>
+
+                        <!--single map-->
+                        <span>
+                            <h4 id="geoLoc" style="color:#00DDDA">Geo Location</h4>
+                            <a id="weatherId" title="click to see the weather" style="cursor: pointer;">
+                                <img src="/Content/img/weather.jpg" width="40px" height="40px" />Weather</a>
+                            &nbsp;<a id="cloudId" title="click to see the cloud images" style="cursor: pointer;"><img src="/Content/img/cloud.jpg" width="40px" height="40px" />Latest Cloud Imageries</a>
+                        </span>
+                        <div id="google-map-js" data-lat="7.5653" data-lng="80.4303" data-zoom="9">
+                            <div id="map_div" style="width: 100%; height: 300px;">&nbsp;</div>
+                        </div>
+                        <p>
+                            District
+                            <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" width="20" />
+                            @Model.Name
+                            <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" width="20" />
+                            Nearest POIs
+                            <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" width="20" />
+                        </p>
+                        <span style="color:#22BBEE;font-size:17px">Nearest POI</span><span style="color:#22BBEE;font-size:14px">&nbsp;(Interesting places nearby)</span>
+                        <div>&nbsp;</div>
+                        <div class="property-info">
+                            <ul class="property-info">
+                                @foreach (var p in Model.Places)
+                                {
+                                    if (p.Places.Any())
+                                    {
+                                    <li><strong style="color:#49AFCD">@p.PlaceName </strong></li>
+                                        foreach (var i in p.Places)
+                                        {
+
+                                            if (p.PoiId == 1)
+                                            {
+                                     
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong class="culture">&#8226; </strong><span><a rel="tooltip" title="@i.Description">@i.PlaceName  </a>@i.TimeTake ,  @i.TravelBy </span></li>
+                                            }
+                                            if (p.PoiId == 2)
+                                            {
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong class="nature">&#8226; </strong><span><a rel="tooltip" title="@i.Description">@i.PlaceName  </a>@i.TimeTake ,  @i.TravelBy </span></li>
+                                            }
+                                            if (p.PoiId == 3)
+                                            {
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong class="people">&#8226; </strong><span><a rel="tooltip" title="@i.Description">@i.PlaceName  </a>@i.TimeTake ,  @i.TravelBy </span></li>
+                                            }
+                                        }
+                                    }
+
+                                }
+                            </ul>
+                        </div>
+                        <div>
+                            <h4  style="color:#22BBEE">Other places of the district</h4>
+                            <div id="banner-fade">
+
+                                <!-- start Basic Jquery Slider -->
+                                <ul class="bjqs">
+
+                                    @foreach (var p in Model.DistrictImages)
+                                    {
+                                        <li>
+                                            <img src=@Url.Content(p.ImagePath) title="@p.ImageDescription">
+                                        </li>
+                                   
+                                    }
+                                    @if (!Model.DistrictImages.Any())
+                                    {
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house3.jpg" title="Test3"></li>
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house4.jpg" title="Test4"></li>
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house5.jpg" title="Test5"></li>
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house6.jpg" title="Test6"></li>
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house1.jpg" title="Test1"></li>
+                                        <li>
+                                            <img src="/Content/img/demo/houses/house2.jpg" title="Test2"></li>
+                                    }
+                                </ul>
+                                <!-- end Basic jQuery Slider -->
+
+                            </div>
+
+                        </div>
+
+                        <div class="property-info">
+                            <div class="">
+                                @if (!string.IsNullOrWhiteSpace(Model.PoliceReport))
+                                {
+                                    <a href="@Model.PoliceReport" target="new">
+                                        <img src="/Content/img/pdf.png" width="40" height="30" />
+                                        Police Report</a>
+                                }
+
+                            </div>
+                            <hr />
+                            <div class="">
+                                @if (!string.IsNullOrWhiteSpace(Model.GSReport))
+                                {
+                                    <a href="@Model.GSReport" target="new">
+                                        <img src="/Content/img/pdf.png" width="40" height="30" />
+                                        GS Report</a>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            @{
+                                var firstImg = Model.Images.FirstOrDefault();
+                                var imgUrl = "/PropertyImages/1/thumbs/room_0.jpg";
+                                if (firstImg != null)
+                                {
+                                    imgUrl = firstImg.ImagePath;
+                                }
+                            }
+                            <a class="btn btn-success" data-toggle="modal" href="#add-reviews">Add Review</a>
+                            <div class="qbox">
+                                
+                                <h3>Visitor's Review <label class="badge badge-important pull-right" id="short-list-count-js">0</label></h3>
+                                <div style="height:200px;overflow:auto">
+                                    <!-- dummy short list items -->
+                                    <ol class="shortlist">
+                                        @foreach (var r in (List<eResorts.Models.ReviewModel>)ViewBag.ReviewComments)
+                                        {
+                                            <li>
+                                                <img src="@imgUrl" alt="" width="48" height="42">
+                                                <div style="width:170px;">
+                                                    @if (r.Comment.Length > 100)
+                                                    {
+                                                        <p style="text-align:justify">@r.Comment.Substring(0,99)</p>
+                                                    }else
+                                                    {
+                                                        <p style="text-align:justify">@r.Comment</p>
+                                                             
+                                                    }
+                                                    <a id="@r.Id" href="#showDetails" data-toggle="modal" class="btn-link">&nbsp;... more</a>
+                                                    - @r.Name (@r.Email)
+                                                </div>
+                                            </li>
+                                        }
+                                     
+                                    </ol>
+                                    <!-- end dummy short list items -->
+				                	
+                                    <!-- DO NOT DELETE -->
+                                    <ol id="show-items" class="shortlist"></ol>
+                                    <!-- END DO NOT DELETE -->
+				                	
+                                    @*<a href="javascript:void(0);" class="link" id="clear-all">Clear List</a>*@
+                                </div>
+                            </div>
+                         
+                        </div>
+                         
+                            <div class="container-fluid appartment-listing" id="renting-map-js">
+                            </div>
+                            <!--divider-->
+                            <div class="divider"></div>
+
+
+                        </div>
+
+                </div>
+                <!-- end row-fluid -->
+
+            </div>
+            <!--end container-fluid-->
+            <div>&nbsp;</div>
+        </div>
+        <!-- end body-text -->
+
+
+
+        <!-- /container -->
+    </section>
+</body>
+
+<div>&nbsp;</div>
+

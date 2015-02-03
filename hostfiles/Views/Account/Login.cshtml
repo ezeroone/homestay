@@ -1,0 +1,57 @@
+﻿@model eResorts.Models.LoginModel
+@{
+    ViewBag.Title = "welcome to best home stay srilanka";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>home stay srilanka - user login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+      <link href="~/content/css/style.css" rel="stylesheet">
+       
+       
+</head>
+<body>
+    <section id="main">
+        <div class="body-text">
+
+            <div class="container-fluid">
+
+                <div class="row-fluid">
+                    <div class="span3">
+                        
+                    </div>
+                    <div class="qbox span7">
+                        <h3><i class="pull-right"></i>Please login</h3>
+                        <span class="span6">
+                            <img src="~/Content/img/sirlanka_map.jpg"/>
+                        </span>
+                        <span class="span5">
+                            <form action="/Account/Login" method="post">
+                                <input type="text" name="Email" placeholder="Username or email" size="50" />
+                                <input type="password" name="Password" placeholder="Password" size="30" /><br/>
+                                <input id="remember_me" type="checkbox" name="KeepMeSignedIn" value="1" />
+                    
+                                <span> Remember me</span>&nbsp;
+                                <input class="btn btn-primary"  type="submit" value="Sign In"/>					
+                                @* <a class="btn btn-primary" href="/Home/Index">Sign In</a>*@
+                     
+                            </form>
+                        </span>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

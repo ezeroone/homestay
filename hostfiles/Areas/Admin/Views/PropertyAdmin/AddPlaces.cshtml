@@ -1,0 +1,301 @@
+﻿@model eResorts.Models.PlaceModel
+@{
+    ViewBag.Title = "AddPlaces";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+}
+   <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $("#btnLink").click(function () {
+         
+            var url = "/Admin/PropertyAdmin/FindLatLong";
+            window.open(url, "Find location", "height=600,width=800,resizable=no");
+        });
+
+        $("#btnback").click(function () {
+            window.location = "/Admin/PropertyAdmin/PropertyList";
+        });
+       
+        $(".icon-remove").click(function (e) {
+            var id = $(this).attr("id");
+            var proId = $(this).attr("propertyId");
+
+            $("#deleteId").val(id);
+            $("#propertyId").val(proId);
+        });
+
+        $("#btndelete").click(function (e) {
+
+            var id = $("#deleteId").val();
+            var propId = $("#propertyId").val();
+            //alert(id);
+            if (id > 0 && propId > 0) {
+
+               
+                $("#loader").show();
+                var url = "/Admin/PropertyAdmin/DeletePlace?id=" + id + "&propId=" + propId;
+
+                $.post(url, function () {
+                    window.location = "/Admin/PropertyAdmin/AddPlaces?propertyId=" + propId;
+                });
+                
+                //$.ajax({
+                //    type: "POST",
+                //    url: "/Admin/PropertyAdmin/DeletePlace",
+                //    data: { id: id, propId: propId },
+                //    success: function (result) {
+
+                //        $("#deleteId").val(0);
+                //        $("#propertyId").val(0);
+                //        window.location = "/Admin/PropertyAdmin/AddPlaces?propertyId=" + propId;
+
+                //    }
+
+                //});
+
+            }
+
+        });
+        
+    });
+</script>
+
+<style>
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+
+
+@Html.Hidden("deleteId","0")
+@Html.Hidden("propertyId","0")
+
+<!-- delete record-->
+<div id="loader" style="display:none"></div>
+<div class="modal hide" id="deleteRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Delete Place</h3>
+    </div>
+    <div class="modal-body">
+        <span> Are you sure ? do you wish to delete this <span style="color:red;font-size:14px">Place</span> ?</span>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btndelete" class="btn btn-primary" data-dismiss="modal">Yes </a>
+    </div>
+</div>
+<!-- End delete-->
+<section id="main">
+    <div class="body-text">
+<div class="container-fluid" >
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="qbox">
+                    <h3><i class="pull-right"></i>Menu</h3>
+                    <a  href="/Admin/PropertyAdmin/Addproperty" class="active"> Add Property</a><br/>
+                    <a href="/Admin/PropertyAdmin/PropertyList"> Property List</a>
+                </div>
+            </div>
+            <div class="span9">
+            <div class=" qbox form-horizontal contact-info">
+            <h3><i class="pull-right"></i>Add Nearest places for : @ViewBag.Property</h3>
+                <form action="@Url.Content("~/Admin/PropertyAdmin/AddPlaces")" method="post">
+                    @Html.HiddenFor(x => x.Id)
+                     @Html.HiddenFor(x => x.PropertyId)
+                    
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label>Places of interest</label>
+                        </div>
+                        <div class=" controls">
+                            @Html.DropDownListFor(model => model.PoiId, (SelectList)ViewBag.POTList, new { @class = "chzn-select span4", @style = "100%" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="PlaceName">Place Name</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="PlaceName" id="PlaceName" />*@
+                            @Html.TextBoxFor(m=>m.PlaceName,new{@class="span8"})
+                        </div>
+
+                    </div>
+                     <div class="control-group">
+                        <div class="control-label">
+                            <label for="PlaceName">Small Description</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="PlaceName" id="PlaceName" />*@
+                            @Html.TextAreaFor(m=>m.Description,new{@class="span6"})
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="Distance">Distance(Km)</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="Distance" class="span1" />*@
+                            @Html.TextBoxFor(m=>m.Distance,new{@class="span3"})
+                            
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="Lat">Latitude/Longitude</label>
+                        </div>
+                        <div class="controls">
+                            
+                             @Html.TextBoxFor(m=>m.Latitude,new{@class="span4"})
+                             @Html.TextBoxFor(m=>m.Longitude,new{@class="span4"})
+                           @* <input class="span3" type="text" name="Latitude" id="Latitude" />
+                            <input class="span3" type="text" name="Longitude" id="Longitude" />*@
+                            <input type="button" id="btnLink" class="btn btn-primary" value="Find location" />
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="TimeTake">Time Take (hrs/mins)</label>
+                        </div>
+                        <div class="controls">
+                          @*  <input type="text" name="TimeTake" class="span2"/>*@
+                            @Html.TextBoxFor(m=>m.TimeTake,new{@class="span3"})
+                            <span class="help-inline"> 1 hr/ 45 mins</span>
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="TimeTake">Travel by</label>
+                        </div>
+                        <div class="controls">
+                           @* <input type="text" name="Travel" />*@
+                              @Html.DropDownListFor(model => model.Travel, (SelectList)ViewBag.TravelBy, new { @class = "chzn-select span3", @style = "width:30%" })
+
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+
+                        <div class="controls">
+                            @if (Model.Id == 0)
+                            {
+                                <input type="submit" value="Add Place" class="btn btn-primary" />
+                            }
+                            else
+                            {
+                                <input type="submit" value="Edit Place" class="btn btn-primary" />
+                            }
+
+                            
+                            <input id="btnback" value="Back" class="btn" type="button" >
+                        </div>
+                    </div>
+                    <div class="box">
+                        @*<div class="box-title">
+                            <br />
+                        </div>*@
+                        <div>
+                               <table class="table table-bordered " style="background:white">
+                                            <thead>
+                                                <tr>
+                                                    <th class="small">
+                                                         Name
+                                                    </th>      
+                                                    <th class="small">
+                                                         Description
+                                                    </th>                          
+                                                    <th class="small">
+                                                        Distance
+                                                    </th>
+                                                    <th class="small">
+                                                       Time
+                                                    </th>
+                                                    <th class="small">
+                                                        Travel by
+                                                    </th>
+                              
+                                                    <th>
+                                                           Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Places)
+                                                {
+                                                    <tr >                                                                                   
+                                                        <td>
+                                                            @item.PlaceName 
+                                                        </td>
+                                   <td>
+                                                            @item.Description 
+                                                        </td>
+                                                        <td>
+                                                           @item.Distance
+                                                        </td>
+                                                        
+                                                        <td>
+                                                           @item.TimeTake
+                                                        </td>
+                                                        <td>
+                                                          @item.TravelBy
+                                                        </td>
+                                                        <td>
+                                                             @{
+                                                    var editurl = "~/Admin/PropertyAdmin/AddPlaces?propertyId=" + @item.PropertyId + "&id=" + @item.Id;
+                                                            }
+                                                            <a id="btnEdit" href="@Url.Content(editurl)" title="click to edit" class="icon-edit"></a>
+                                        
+                                                            @{
+                                                    var deleteurl = "~/Admin/PropertyAdmin/DeleteItem?id=" + @item.Id;
+                                                            }
+                                                               <a href="#deleteRecord" data-toggle="modal" class="icon-remove" id=@item.Id  propertyId=@item.PropertyId ></a>
+                                                       
+                                                        
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                         
+                                        </table>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+        </div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

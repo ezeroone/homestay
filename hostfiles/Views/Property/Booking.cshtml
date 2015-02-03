@@ -1,0 +1,200 @@
+﻿@model eResorts.Models.BookingModel
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <link href="@Url.Content("~/Content/AjaxForms.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css"/>
+}
+<script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("http://www.google.com/jsapi?autoload={'modules':[{name:'maps',version:3,other_params:'sensor=false'}]}")" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#divLogin").hide();
+        $("#BookingFrom").datepicker(
+            {
+                onSelect: function () {
+                    var diff = dateDiff($('#BookingFrom').datepicker("getDate"),
+                                        $('#BookingTo').datepicker("getDate"));
+                    //alert(diff);
+                    if (parseInt(diff) > 0) {
+                        $("#spnDates").html(diff);
+                        var amount = $("#DisplayPrice").val();
+
+                        var totalPrice = parseFloat(amount) * parseInt(diff);
+                        // alert(totalPrice);
+                        $("#spnPrice").html(totalPrice.toString());
+                    }
+                },
+                dateFormat: 'dd/mm/yy',
+            });
+        $('#BookingTo').datepicker({
+            onSelect: function () {
+                var diff = dateDiff($('#BookingFrom').datepicker("getDate"),
+                                    $('#BookingTo').datepicker("getDate"));
+                //alert(diff);
+                if (parseInt(diff) > 0) {
+                    $("#spnDates").html(diff);
+                    var amount = $("#DisplayPrice").val();
+                   
+                    var totalPrice = parseFloat(amount) * parseInt(diff);
+                   // alert(totalPrice);
+                    $("#spnPrice").html(totalPrice.toString());
+                }
+            }, dateFormat: 'dd/mm/yy',
+        });
+
+        function dateDiff(startDate, endDate) {
+            if (endDate && startDate)
+                return (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+            return "You must complete both dates!";
+        }
+        
+        $('#btnBook').click(function () {
+            $("#divLogin").hide();
+            $("#divConfirm").html("");
+            var propertyId = $("#PropertyId").val();
+            var frmDate = $('#BookingFrom').datepicker("getDate");
+            frmDate=$.datepicker.formatDate("mm/dd/yy", frmDate);
+            var toDate = $('#BookingTo').datepicker("getDate");
+            toDate = $.datepicker.formatDate("mm/dd/yy", toDate);
+            var amount = $("#spnPrice").html();
+            var days = $("#spnDates").html();
+            
+            $.post('/Property/PreBook/', '&propertyId=' + propertyId + '&frmDate=' + frmDate + '&toDate=' + toDate , function (data) {
+
+                if (data == "proceed") {
+                    $.post('/Property/Book/', '&propertyId=' + propertyId + '&frmDate=' + frmDate + '&toDate=' + toDate + '&price=' + amount + '&days=' + days, function (data) {
+                        window.location = "/Property/BookingSuccess";
+                    });
+                }
+                else if (data == "exist") {
+                    $("#divConfirm").html("Selected dates are already booked...");
+                }
+                else if (data == "login") {
+                    $("#divLogin").show();
+                }
+               
+            });
+            
+            //$.post('/Property/Book/', '&propertyId=' + propertyId + '&frmDate=' + frmDate + '&toDate=' + toDate + '&price=' + amount + '&days=' + days, function (data) {
+            //    window.location = "/Property/BookingSuccess";
+            //});
+            
+        });
+        
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var lat = '@Model.Latitude';
+        var long = '@Model.Longitude';
+        var place = '@Model.Name';
+        var myOptions = {
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+           
+        };
+        
+        var map = new google.maps.Map(document.getElementById("map_div"), myOptions);
+        directionsDisplay.setMap(map);
+
+       
+          var start = new google.maps.LatLng(7.162383, 79.870434);//from Kattunayakke Intl Airport
+          var end = new google.maps.LatLng(lat, long);
+
+          var request = {
+              origin: start,
+              destination: end,
+              travelMode: google.maps.DirectionsTravelMode.DRIVING,
+              
+          };
+
+          directionsService.route(request, function (response, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+
+                  directionsDisplay.setMap(map);
+                  directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+                  //// Display the route:
+                  directionsDisplay.setDirections(response);
+
+              }
+          });
+      });
+</script>
+
+
+<section id="main">
+
+    <div class="body-text">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12"><br/>
+                    <strong style="font-size:20px">
+                        @Model.Name
+                    </strong>
+                    <h4>Traveller Route from Kattunayakke Intl Airport to @Model.Name</h4>
+                    <div id="google-map-js" data-lat="@Model.Latitude" data-lng="@Model.Longitude" data-zoom="9">
+                        <div id="map_div" style="width: 100%; height: 300px;">&nbsp;</div>
+                    </div>
+                    <div class="span6" id="directions-panel" style="height: 300px;background:floralwhite; overflow-x: auto"></div>
+                    <div class="span5">
+                        <div class="qbox" style="height: 265px;">
+                            <h3><i class=" pull-right"></i>Confirm Booking  <span style="float:right;color:chartreuse"> $ @Model.DisplayPrice / Day</span></h3>
+                           
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label for="Food">Booking Dates</label>
+                                </div>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m=>m.BookingFrom,new{@class="span4"}) &nbsp;To :  &nbsp;
+                                    @Html.TextBoxFor(m=>m.BookingTo,new{@class="span4"})
+                                </div>
+                            </div>
+                                @Html.HiddenFor(m=>m.PropertyId)
+                                @Html.HiddenFor(m=>m.ClientId)
+                                @Html.HiddenFor(m=>m.VisitorId)
+                                @Html.Hidden("DisplayPrice", @Model.DisplayPrice)
+
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <strong>No of Day(s): </strong><span id="spnDates">1</span>
+                                </div>
+                                <div class="controls">
+                                    <strong>Total Amount : </strong> <b>$</b> <span id="spnPrice"> @Model.DisplayPrice </span>
+                                    <input id="btnBook" style="width:80px;float:right"value="Book it" class="btn btn-danger"/>
+                              
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div id="divConfirm" style="color:red;"></div>
+                                <div id="divLogin" class="rounderCorner" style="height:100px;width:350px;float:right;border:blue solid 1px;">
+                                    <span style="color:red;">Login required...</span><br/>
+                                    <a href="/Account/Login"><b>Login</b></a> / <a href="/Account/VisitorRegistration"><b> Registration required</b></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end row-fluid -->
+
+        </div>
+        <div>&nbsp;</div>
+        <!--end container-fluid-->
+
+    </div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

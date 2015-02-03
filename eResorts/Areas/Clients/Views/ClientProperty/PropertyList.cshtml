@@ -1,0 +1,217 @@
+﻿@model IEnumerable<eResorts.Models.PropertyModel>
+
+@{
+    ViewBag.Title = "PropertyList";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+@section Styles
+{
+    <link href="@Url.Content("~/Content/AjaxForms.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css"/>
+   
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $(".icon-remove").click(function (e) {
+                 var proId = $(this).attr("propertyId");
+                 $("#propertyId").val(proId);
+             });
+             
+             $("#btndelete").click(function (e) {
+
+                 var propId = $("#propertyId").val();
+                 //alert(id);
+                 if (propId>0) {
+ 
+                     $("#loader").show();
+                     var url = "/Clients/ClientProperty/DeleteProperty?id=" + propId;
+
+                     $.post(url, function () {
+                         window.location = "/Clients/ClientProperty/PropertyList";
+                     });
+                     
+                      //$.ajax({
+                      //    type: "POST",
+                      //    url: "/Clients/ClientProperty/DeleteProperty",
+                      //    data: { id: propId },
+                      //    success: function (result) {
+
+                            
+                      //        $("#propertyId").val(0);
+                      //        window.location = "/Clients/ClientProperty/PropertyList";
+
+                      //    }
+
+                      //});
+                     
+                 }
+                
+             });
+             
+         });
+    </script>
+}
+
+<style>
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+
+@Html.Hidden("propertyId","0")
+<div id="loader" style="display:none"></div>
+<!-- delete record-->
+<div class="modal hide" id="deleteRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Delete Accomodation</h3>
+    </div>
+    <div class="modal-body">
+        <span> Are you sure ? do you wish to delete this <span style="color:red;font-size:14px">Accomodation</span> ?</span>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btndelete" class="btn btn-primary" data-dismiss="modal">Yes </a>
+    </div>
+</div>
+<!-- End delete-->
+
+<section id="main">
+    <div class="body-text">
+<div class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="qbox">
+                <h3><i class="pull-right"></i>Menu</h3>
+              <a  href="/Clients/ClientProperty/Addproperty" class="active"> Add Property</a><br/>
+                <a href="/Clients/ClientProperty/PropertyList"> Property List</a>
+            </div>
+        </div>
+        <!--west pane with width of span12-->
+        <div class="span9">
+            <div class=" qbox form-horizontal contact-info">
+                <h3><i class="pull-right"></i>Property List</h3>
+                <div class="box">
+                    <table id="datatable" class="table table-bordered" style="background:white">
+                                            <thead>
+                                                <tr>
+                                                    <th class="small">
+                                                         Accommodation 
+                                                    </th>                             
+                                                    <th class="small">
+                                                        Address
+                                                    </th>
+                                                    <th class="small">
+                                                        Owner Name
+                                                    </th>
+                                                    <th class="small">
+                                                        Status
+                                                    </th>
+                                                    @*<th class="small">
+                                                        AddedBy
+                                                    </th>*@
+                                                    <th>
+                                                         Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>                                                                                   
+                                                        <td>
+                                                            @{
+                                                                var viewurl = "~/Clients/ClientProperty/PropertyDetail?id=" + @item.Id;
+                                                            }
+                                                            <a id="btnview" href="@Url.Content(viewurl)" title="View Property "> @item.Name </a>
+
+                                                           
+                                                        </td>
+                                  
+                                                        <td>
+                                                           @item.Adderss,  @item.City 
+                                                        </td>
+                                                        
+                                                        <td>
+                                                           @item.ContactPerson1 (@item.LandLinePrimary,@item.MobilePrimary)
+                                                        </td>
+                                                        <td>
+                                                            @if (@item.IsActive)
+                                                            {
+                                                                <span>Active</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>Inactive</span>
+                                                            }
+                                                        </td>
+                                                        @*<td>
+                                                            @item.AddedBy
+                                                        </td>*@
+
+                                                        <td style="width:160px;">
+                                                             @{
+                                                    var editurl = "~/Clients/ClientProperty/AddProperty?id=" + @item.Id;
+                                                            }
+                                                            <a id="btnEdit" href="@Url.Content(editurl)" title="click to edit" class="icon-edit"></a>
+                                        
+                                                            @{
+                                                    var deleteurl = "~/Clients/ClientProperty/DeleteItem?id=" + @item.Id;
+                                                            }
+                                                           
+                                                          @*   <a href="#delete-item" class="btn btn-primary btn-mini" data-toggle="modal" id="@item.Id" onclick="SetId(@item.Id);">Delete</a>*@
+                                                          @{
+                                                   
+                                                            var imageurl = "~/Clients/ClientProperty/AddImages?id=" + @item.Id;
+                                                            var placeUrl = "~/Clients/ClientProperty/AddPlaces?propertyId=" + @item.Id;
+                                                            var poiUrl = "~/Clients/ClientProperty/AddPoI?id=" + @item.Id;
+                                                            var feartueUrl = "~/Clients/ClientProperty/AddFeatures?id=" + @item.Id;
+                                                            var contactUrl = "~/Clients/ClientProperty/AddContacts?propertyId=" + @item.Id;
+                                                            var foodUrl = "~/Clients/ClientProperty/AddFood?propertyId=" + @item.Id;
+                                                            }
+                                                            
+                                                            <a id="btnImages" href="@Url.Content(imageurl)" title="add images "class="icon-camera"></a>
+                                                            <a id="btnPlaces" href="@Url.Content(placeUrl)" title="add nearest places "class="icon-picture"></a>
+                                                          @*  <a id="btnPoi" href="@Url.Content(poiUrl)" title="add point of interest "class="icon-film"></a>*@
+                                                            <a id="btnFeature" href="@Url.Content(feartueUrl)" title="add features "class="icon-filter"></a>
+                                                            <a id="btnContact" href="@Url.Content(contactUrl)" title="add Translators "class="icon-comment"></a>
+                                                            <a id="btnFood" href="@Url.Content(foodUrl)" title="add dining details "class="icon-file"></a>
+                                                            <a href="#deleteRecord" data-toggle="modal" class="icon-remove"  propertyId=@item.Id title="Delete accomodation" ></a>
+                                                        
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                         
+                                        </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--end of span12-->
+
+</div>
+        </div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

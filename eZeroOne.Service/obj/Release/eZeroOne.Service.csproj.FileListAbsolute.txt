@@ -1,0 +1,72 @@
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\bin\Release\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+I:\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.dll
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+I:\HomeStay\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+I:\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+I:\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.xml
+I:\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+I:\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+I:\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\Mvc.Mailer.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\eZeroOne.MailService.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\bin\Release\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Service\obj\Release\eZeroOne.Service.pdb

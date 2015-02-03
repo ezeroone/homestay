@@ -1,0 +1,245 @@
+﻿@model eResorts.Models.DiningModel
+@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $("#btnback").click(function () {
+                 window.location = "/Admin/PropertyAdmin/PropertyList";
+             });
+             
+             $(".icon-remove").click(function (e) {
+                 var id = $(this).attr("id");
+                 var proId = $(this).attr("propertyId");
+                 
+                 $("#deleteId").val(id);
+                 $("#propertyId").val(proId);
+             });
+             
+             $("#btndelete").click(function (e) {
+
+                 var id = $("#deleteId").val();
+                 var propId = $("#propertyId").val();
+                 //alert(id);
+                 if (id > 0 && propId>0) {
+
+                     $("#loader").show();
+                     var url = "/Admin/PropertyAdmin/DeleteMeal?id=" + id + "&propId=" + propId;
+                     
+                     $.post(url, function () {
+                         window.location = "/Admin/PropertyAdmin/AddFood?propertyId=" + propId;
+                     });
+                     
+                      //$.ajax({
+                      //    type: "POST",
+                      //    url: "/Admin/PropertyAdmin/DeleteMeal",
+                      //    data: { id: id, propId: propId },
+                      //    success: function (result) {
+
+                      //        window.location = "/Admin/PropertyAdmin/AddFood?propertyId=" + propId;
+                      //        $("#deleteId").val(0);
+                      //        $("#propertyId").val(0);
+                      //        $("#btncancel").click();
+
+                      //    }
+
+                      //});
+                     
+                 }
+                
+             });
+             
+         });
+    </script>
+}
+
+<style>
+    #loader
+    {
+        background:#fff url(/Content/images/loading.gif) no-repeat center center;
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        margin: -25px 0 0 -25px;
+    }
+</style>
+
+@Html.Hidden("deleteId","0")
+@Html.Hidden("propertyId","0")
+
+<!-- delete record-->
+<div class="modal hide" id="deleteRecord">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            x
+        </button>
+        <h3>Delete Dining</h3>
+    </div>
+    <div class="modal-body">
+        <span> Are you sure ? do you wish to delete this <span style="color:red;font-size:14px">Dining</span> ?</span>
+    </div>
+    <div class="modal-footer">
+        <a href="#" id="btncancel" class="btn" data-dismiss="modal">No </a>
+        <a href="#" id="btndelete" class="btn btn-primary" data-dismiss="modal">Yes </a>
+    </div>
+</div>
+<!-- End delete-->
+
+<div id="loader" style="display:none"></div>
+<section id="main">
+    <div class="body-text">
+<div class="container-fluid" >
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="qbox">
+                    <h3><i class="pull-right"></i>Menu</h3>
+                    <a  href="/Admin/PropertyAdmin/Addproperty" class="active "> Add Property</a><br/>
+                    <a href="/Admin/PropertyAdmin/PropertyList"> Property List</a>
+                </div>
+            </div>
+            <div class="span9">
+            <div class=" qbox form-horizontal contact-info">
+            <h3><i class="pull-right"></i>Add Dinings for : @ViewBag.Property</h3>
+                <form action="@Url.Content("~/Admin/PropertyAdmin/AddFood")" method="post">
+                    @Html.HiddenFor(x => x.Id)
+                     @Html.HiddenFor(x => x.PropertyId)
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="FoodId">Meal Type</label>
+                        </div>
+                        <div class="controls">
+                            @Html.DropDownListFor(model => model.FoodId, (SelectList)ViewBag.Meals, new { @class = "chzn-select span3", @style = "100%" })
+
+                        </div>
+
+                    </div>
+                  @*  <div class="control-group">
+                        <div class="control-label">
+                            <label for="Food">Food</label>
+                        </div>
+                        <div class="controls">
+                       
+                              @Html.TextBoxFor(m=>m.Food,new{@class="span4"})
+                            
+                        </div>
+
+                    </div>*@
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="Price">Price($)</label>
+                        </div>
+                        <div class="controls">
+                           @* <input type="text" name="Price" />*@
+                             @Html.TextBoxFor(m=>m.Price,new{@class="span2"})
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <label for="MealType">Menu</label>
+                        </div>
+                        <div class="controls">
+                            @*<input type="text" name="MealType" />*@
+                            @Html.TextAreaFor(m=>m.MealType,new{@class="span8"})
+                        </div>
+
+                    </div>
+                   
+                   
+                    <div class="control-group">
+
+                        <div class="controls">
+                            @if (Model.Id == 0)
+                            {
+                                <input type="submit" value="Add Food" class="btn btn-primary" />
+                            }
+                            else
+                            {
+                                <input type="submit" value="Edit Food" class="btn btn-primary" />
+                            }
+                            
+                            <input id="btnback" value="Back" class="btn" type="button" >
+                        </div>
+                    </div>
+                    <div class="box">
+                   @*     <div class="box-title">
+                            <br />
+                        </div>*@
+                        <div>
+                               <table class="table table-bordered " style="background:white">
+                                            <thead>
+                                                <tr>
+                                                    <th class="small">
+                                                         Meal Type
+                                                    </th>                             
+                                                    
+                                                    <th class="small">
+                                                      Price($)
+                                                    </th>
+                                                    <th class="small">
+                                                        Menu
+                                                    </th>
+                            
+                                                    <th>
+                                                           Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Meals)
+                                                {
+                                                    <tr >                                                                                   
+                                                        <td>
+                                                            @item.Food 
+                                                        </td>
+                                  
+                                                        <td>
+                                                           @item.Price
+                                                        </td>
+                                                        
+                                                        <td>
+                                                           @item.MealType
+                                                        </td>
+                                                        
+                                                        <td>
+                                                             @{
+                                                    var editurl = "~/Admin/PropertyAdmin/AddFood?propertyId=" + @item.PropertyId + "&id=" + @item.Id;
+                                                            }
+                                                          
+                                                             <a id="btnEdit" href="@Url.Content(editurl)" title="click to edit" class="icon-edit"></a>
+                                        
+                                                            <a href="#deleteRecord" data-toggle="modal" class="icon-remove" id=@item.Id  propertyId=@item.PropertyId ></a>
+                                                                
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                         
+                                        </table>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+</div>
+    <!-- end body-text -->
+
+    <!-- /container -->
+</section>
+<div>&nbsp;</div>

@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Approval :: Confirmation</title>
+</head>
+<body>
+	
+	<p>Dear <# Write(UserName); #>,</p>
+	
+	<p>Thank you for booking with besthomestaylanka. please check you email with booking details</p>
+	<span> From Date :</span>	<span> "<# Write(FromDate); #>" </span>	 <br/>
+	<span> To Date :</span>	<span> "<# Write(ToDate); #>" </span>	<br/>
+	<span> Days :</span>	<span> "<# Write(Days); #>" </span>	<br/>
+	<span> Amount :</span>	<span> "<# Write(Amount); #>" </span>	<br/><br/>
+	<p><a href="<# Write(Link); #>" style="background-color: lightblue; padding:5px;"><span style="font-weight:bold;">Booking</span></a></p>
+
+	<p>If the link doesn’t work, please try to paste the above url into your web browser.</p>
+	 <br/>
+	  <br/>
+	<p>Thanks,
+	 <br/>
+	Admin <br/>
+	
+</body>
+</html>

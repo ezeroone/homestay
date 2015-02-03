@@ -1,0 +1,494 @@
+I:\eResorts\eResorts\eResorts\bin\eResorts.dll
+I:\eResorts\eResorts\eResorts\bin\eResorts.pdb
+I:\eResorts\eResorts\eResorts\bin\Antlr3.Runtime.dll
+I:\eResorts\eResorts\eResorts\bin\EntityFramework.dll
+I:\eResorts\eResorts\eResorts\bin\Microsoft.Web.Infrastructure.dll
+I:\eResorts\eResorts\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+I:\eResorts\eResorts\eResorts\bin\Newtonsoft.Json.dll
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.dll
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.Formatting.dll
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.WebRequest.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Http.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Http.WebHost.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Mvc.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Optimization.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Providers.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.Razor.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Deployment.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.dll
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Razor.dll
+I:\eResorts\eResorts\eResorts\bin\WebGrease.dll
+I:\eResorts\eResorts\eResorts\bin\EntityFramework.xml
+I:\eResorts\eResorts\eResorts\bin\Newtonsoft.Json.xml
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.xml
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.Formatting.xml
+I:\eResorts\eResorts\eResorts\bin\System.Net.Http.WebRequest.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.Http.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.Http.WebHost.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.Mvc.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.Razor.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Deployment.xml
+I:\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Razor.xml
+I:\eResorts\eResorts\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+I:\eResorts\eResorts\eResorts\obj\Debug\eResorts.dll
+I:\eResorts\eResorts\eResorts\obj\Debug\eResorts.pdb
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\eResorts.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\eResorts.pdb
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\Antlr3.Runtime.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\EntityFramework.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\Newtonsoft.Json.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.Formatting.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.WebRequest.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Http.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Http.WebHost.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Mvc.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Optimization.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Providers.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Razor.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Deployment.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Razor.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\WebGrease.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\EntityFramework.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\Newtonsoft.Json.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.Formatting.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Net.Http.WebRequest.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Http.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Http.WebHost.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Mvc.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.Razor.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Deployment.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\bin\System.Web.WebPages.Razor.xml
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\obj\Debug\eResorts.dll
+C:\Users\N.Navaseelan\Desktop\eResorts\eResorts\eResorts\obj\Debug\eResorts.pdb
+I:\HomeStay\HomeStay\eResorts\bin\eResorts.dll
+I:\HomeStay\HomeStay\eResorts\bin\eResorts.pdb
+I:\HomeStay\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+I:\HomeStay\HomeStay\eResorts\bin\EntityFramework.dll
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.dll
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.dll
+I:\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+I:\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+I:\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+I:\HomeStay\HomeStay\eResorts\bin\Ninject.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Http.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Optimization.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Providers.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.dll
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+I:\HomeStay\HomeStay\eResorts\bin\WebGrease.dll
+I:\HomeStay\HomeStay\eResorts\bin\Mvc.Mailer.dll
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+I:\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+I:\HomeStay\HomeStay\eResorts\bin\EntityFramework.xml
+I:\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Http.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+I:\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+I:\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+I:\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.dll
+I:\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eResorts.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eResorts.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\EntityFramework.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Ninject.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Optimization.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Providers.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\WebGrease.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Mvc.Mailer.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\EntityFramework.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eResorts.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eResorts.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Core.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Facilities.Logging.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Windsor.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Common.Logging.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\EntityFramework.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\log4net.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Ninject.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Optimization.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Providers.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\WebGrease.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Mvc.Mailer.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Core.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Facilities.Logging.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Castle.Windsor.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\log4net.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\EntityFramework.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Mvc.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.Razor.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eResorts\obj\Debug\eResorts.pdb
+I:\HomeStay\eResorts\bin\eResorts.dll
+I:\HomeStay\eResorts\bin\eResorts.pdb
+I:\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+I:\HomeStay\eResorts\bin\Castle.Core.dll
+I:\HomeStay\eResorts\bin\Castle.Facilities.Logging.dll
+I:\HomeStay\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+I:\HomeStay\eResorts\bin\Castle.Windsor.dll
+I:\HomeStay\eResorts\bin\Common.Logging.dll
+I:\HomeStay\eResorts\bin\EntityFramework.dll
+I:\HomeStay\eResorts\bin\eZeroOne.Common.dll
+I:\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+I:\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+I:\HomeStay\eResorts\bin\eZeroOne.Service.dll
+I:\HomeStay\eResorts\bin\log4net.dll
+I:\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+I:\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+I:\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+I:\HomeStay\eResorts\bin\Ninject.dll
+I:\HomeStay\eResorts\bin\System.Net.Http.dll
+I:\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+I:\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+I:\HomeStay\eResorts\bin\System.Web.Http.dll
+I:\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+I:\HomeStay\eResorts\bin\System.Web.Mvc.dll
+I:\HomeStay\eResorts\bin\System.Web.Optimization.dll
+I:\HomeStay\eResorts\bin\System.Web.Providers.dll
+I:\HomeStay\eResorts\bin\System.Web.Razor.dll
+I:\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+I:\HomeStay\eResorts\bin\System.Web.WebPages.dll
+I:\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+I:\HomeStay\eResorts\bin\WebGrease.dll
+I:\HomeStay\eResorts\bin\Mvc.Mailer.dll
+I:\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+I:\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+I:\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+I:\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+I:\HomeStay\eResorts\bin\Castle.Core.xml
+I:\HomeStay\eResorts\bin\Castle.Facilities.Logging.xml
+I:\HomeStay\eResorts\bin\Castle.Windsor.xml
+I:\HomeStay\eResorts\bin\log4net.xml
+I:\HomeStay\eResorts\bin\EntityFramework.xml
+I:\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+I:\HomeStay\eResorts\bin\System.Net.Http.xml
+I:\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+I:\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+I:\HomeStay\eResorts\bin\System.Web.Http.xml
+I:\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+I:\HomeStay\eResorts\bin\System.Web.Mvc.xml
+I:\HomeStay\eResorts\bin\System.Web.Razor.xml
+I:\HomeStay\eResorts\bin\System.Web.WebPages.xml
+I:\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+I:\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+I:\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+I:\HomeStay\eResorts\obj\Debug\eResorts.dll
+I:\HomeStay\eResorts\obj\Debug\eResorts.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eResorts.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eResorts.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Core.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Facilities.Logging.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Windsor.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Common.Logging.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\EntityFramework.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Service.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\log4net.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Ninject.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Http.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Mvc.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Optimization.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Providers.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Razor.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\WebGrease.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Mvc.Mailer.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Core.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Facilities.Logging.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Castle.Windsor.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\log4net.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\EntityFramework.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Http.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Mvc.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.Razor.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\obj\Debug\eResorts.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eResorts\obj\Debug\eResorts.pdb
+I:\HomeStay\eResorts\bin\AreYouAHuman.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eResorts.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eResorts.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Antlr3.Runtime.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\AreYouAHuman.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Core.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Facilities.Logging.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Windsor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Common.Logging.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.MailService.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\log4net.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Microsoft.Web.Infrastructure.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Newtonsoft.Json.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Ninject.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.Formatting.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.WebRequest.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Http.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Http.WebHost.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Mvc.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Optimization.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Providers.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Razor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.Razor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\WebGrease.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Mvc.Mailer.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.MailService.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Core.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Facilities.Logging.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Castle.Windsor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\log4net.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\Newtonsoft.Json.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.Formatting.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Net.Http.WebRequest.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Http.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Http.WebHost.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Mvc.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.Razor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.Deployment.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\bin\System.Web.WebPages.Razor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\obj\Debug\eResorts.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eResorts\obj\Debug\eResorts.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eResorts.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eResorts.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Antlr3.Runtime.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\AreYouAHuman.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Core.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Facilities.Logging.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Windsor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Common.Logging.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.MailService.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Service.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\log4net.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Microsoft.Web.Infrastructure.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Newtonsoft.Json.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Ninject.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.Formatting.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.WebRequest.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.WebHost.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Mvc.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Optimization.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Providers.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Razor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Deployment.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Razor.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\WebGrease.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Mvc.Mailer.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.MailService.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Service.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Core.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Facilities.Logging.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Windsor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\log4net.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Newtonsoft.Json.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.Formatting.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.WebRequest.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.WebHost.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Mvc.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Razor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Deployment.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Razor.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eResorts.dll.config
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eResorts.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eResorts.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Antlr3.Runtime.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\AreYouAHuman.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Core.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Facilities.Logging.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Services.Logging.Log4netIntegration.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Windsor.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Common.Logging.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\EntityFramework.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Common.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Domain.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.MailService.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Service.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\log4net.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Microsoft.Web.Infrastructure.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Newtonsoft.Json.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Ninject.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.Formatting.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.WebRequest.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.WebHost.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Mvc.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Optimization.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Providers.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Razor.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Deployment.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Razor.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\WebGrease.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Mvc.Mailer.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Common.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Domain.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.MailService.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\eZeroOne.Service.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Core.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Facilities.Logging.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Castle.Windsor.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\log4net.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\EntityFramework.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\Newtonsoft.Json.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.Formatting.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Net.Http.WebRequest.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Http.WebHost.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Mvc.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.Razor.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Deployment.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\bin\System.Web.WebPages.Razor.xml
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.csprojResolveAssemblyReference.cache
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eResorts\obj\Debug\eResorts.pdb

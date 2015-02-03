@@ -1,0 +1,123 @@
+﻿@model List<eResorts.Models.PropertyModel>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#btnSearch').click(function () {
+
+
+        });
+
+    });
+</script>
+
+
+
+ <div class="container-fluid appartment-listing" id="renting-map-js">
+
+    <!-- page heading -->
+  @if (!Model.Any())
+  {
+      <div class="container-fluid">
+          <div class="row-fluid">
+              <div class="span7 dropdown-results">
+                  <p>No matching records found</p>
+              </div>
+            
+          </div>
+      </div>
+  }
+  else
+  {
+       <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span7 dropdown-results">
+                <p>Showing 1 - @ViewBag.Records of @ViewBag.Records results</p>
+            </div>
+            <div class="span5">
+               @* <select id="sort" name="sort">
+                    <option value="rank">Sort by Popularity</option>
+                    <option value="low">Sort by Price: Low to High</option>
+                    <option value="high">Sort by Price: High to Low</option>
+                </select>*@
+            </div>
+        </div>
+    </div>
+    <!-- end page heading -->
+
+    <!-- create listing for rent -->
+    <div class="container-fluid appartment-listing" id="renting-map-js">
+        <!--start list-->
+        @foreach (var p in Model)
+        {
+            <div class="container-fluid">
+								<div class="row-fluid">
+									<div class="span4">
+										<a href="@p.PropertyUrl"><img src="@p.DefaultImageUrl" alt="@p.Adderss" /></a>
+										@*<span class="sticker sticker-hot">Hot</span>*@
+									</div>
+									<div class="span8">
+										<a href="@p.PropertyUrl" class="prop-title">@p.Name</a>
+									    <p class="size">Bedrooms : @p.NoOfRooms </p>
+									    <p class="size">Features :@p.FeatureList</p>
+                                        <p class="size">City : @p.City</p>
+									    <p style="color:#FFF;border-color: #7dbb18; background: #8fc800;padding-left:5px; width:100px;text-align:center">$@p.DisplayPrice /Day</p>
+                                        
+									    <p class="description">
+									        Accomodation Info :
+                        @if (p.Description.Length > 200)
+                        {
+                            <span>@p.Description.Substring(0, 199)</span>
+                        }
+                        else
+                        {
+                            <span>@p.Description</span>
+                        }  
+									   ... </p>
+										<!-- Short List Btns -->
+										<ul class="list-btns">
+										
+											<li><a href="@p.PropertyUrl"><i class="icon-info-sign"></i>View Details</a></li>
+										</ul>
+										<!-- end short list -->
+									</div>
+								</div>
+							</div>
+        }
+
+       
+    </div>
+    <!-- end map plot-->
+
+    @*<!--begin paging-->
+    <div class="container-fluid">
+        <div class="row-fluid" style="border: none;">
+            <div class="span12">
+                <div class="pagination pagination-centered">
+                    <ul>
+                        <li><a href="javascript:void(0)">« Prev.</a></li>
+                        <li><a href="javascript:void(0)">1</a></li>
+                        <li><a href="javascript:void(0)">2</a></li>
+                        <li><a href="javascript:void(0)">3</a></li>
+                        <li><a href="javascript:void(0)">4</a></li>
+                        <li><a href="javascript:void(0)">5</a></li>
+                        <li><a href="javascript:void(0)">10</a></li>
+                        <li><a href="javascript:void(0)">11</a></li>
+                        <li><a href="javascript:void(0)">12</a></li>
+                        <li><a href="javascript:void(0)">13</a></li>
+                        <li><a href="javascript:void(0)">14</a></li>
+                        <li><a href="javascript:void(0)">15</a></li>
+                        <li><a href="javascript:void(0)">16</a></li>
+                        <li><a href="javascript:void(0)">17</a></li>
+                        <li><a href="javascript:void(0)">18</a></li>
+                        <li><a href="javascript:void(0)">Next »</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end paging -->*@
+  }
+   
+
+</div>

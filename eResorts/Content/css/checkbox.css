@@ -1,0 +1,115 @@
+ 
+    /*Document   : style
+    Created on : Aug 29, 2012, 3:59:32 PM
+    Author     : Nick
+    Description:
+        Purpose of the stylesheet follows.*/
+
+
+html {
+    height:100%;
+}
+
+body {
+    position:relative;
+    background:#f2f2f2;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+div#show {
+    width:280px;
+    height:200px;
+    padding:20px;
+    position:absolute;
+    left:50%;
+    margin-left:-120px;
+    top:50%;
+    margin-top:-160px;
+    background:#40464b;
+    border-radius:6px;
+}
+
+h1 {
+    font-size:14px;
+    color:#f2f2f2;
+    text-align:center;
+    margin:0 0 20px;
+    padding:0;
+    font-family:Arial;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:black;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color:#f2f2f2;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url(check_radio_sheet.png) -57px top no-repeat;
+}
+
+/*input[type=checkbox].css-checkbox {
+							display:none;
+						}
+
+						input[type=checkbox].css-checkbox + label.css-label {
+							padding-left:20px;
+							height:15px; 
+							display:inline-block;
+							line-height:15px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:15px;
+							vertical-align:middle;
+							cursor:pointer;
+						}
+
+						input[type=checkbox].css-checkbox:checked + label.css-label {
+							background-position: 0 -15px;
+						}
+						
+						.css-label{
+							background-image:url(http://csscheckbox.com/checkboxes/dark-check-green.png);
+                         
+						}*/
+						

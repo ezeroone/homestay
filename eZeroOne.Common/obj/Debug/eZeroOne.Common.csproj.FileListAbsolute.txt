@@ -1,0 +1,74 @@
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+D:\Navaseelan\Project\eShoppingNew\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+D:\Navaseelan\Project\eShoppingNew\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+D:\Navaseelan\Project\eShoppingNew\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+D:\Navaseelan\Project\eShoppingNew\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+D:\Navaseelan\Project\eShoppingNew\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+K:\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+K:\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+K:\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+K:\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\Android\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\Android\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\Android\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\Android\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+I:\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+I:\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+I:\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+I:\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+I:\eResorts\eResorts\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+I:\eResorts\eResorts\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+I:\eResorts\eResorts\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+I:\eResorts\eResorts\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+I:\eResorts\eResorts\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+I:\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+I:\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+I:\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+I:\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+I:\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+I:\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+I:\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+I:\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+I:\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\bin\Debug\eZeroOne.Common.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\bin\Debug\eZeroOne.Common.pdb
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.csprojResolveAssemblyReference.cache
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.dll
+E:\eZeroOneTech\My Live Projects\Projects\HomeStay-NewStyle\eZeroOne.Common\obj\Debug\eZeroOne.Common.pdb

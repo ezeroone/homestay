@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60B96007-F820-45BD-AC18-E0AB4F02DE4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eZeroOne.Domain</RootNamespace>
+    <AssemblyName>eZeroOne.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\PasswordResetTokenEntityConfiguration.cs" />
+    <Compile Include="Configurations\RoleEntityConfiguration.cs" />
+    <Compile Include="Configurations\UserEntityConfiguration.cs" />
+    <Compile Include="EmailActivationToken.cs" />
+    <Compile Include="eResortsDataContext.cs" />
+    <Compile Include="Extensions\CustomDatabaseInitializer.cs" />
+    <Compile Include="ISpecification.cs" />
+    <Compile Include="Models\AccommodationStandard.cs" />
+    <Compile Include="Models\AccommodationType.cs" />
+    <Compile Include="Models\BannerImage.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingCart.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\CompanyProfile.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Cuisine.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Designation.cs" />
+    <Compile Include="Models\Dining.cs" />
+    <Compile Include="Models\EmailAttachment.cs" />
+    <Compile Include="Models\EmailNotification.cs" />
+    <Compile Include="Models\Feature.cs" />
+    <Compile Include="Models\FeatureCategory.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceNumber.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\MainCity.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\PasswordResetToken.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\Place.cs" />
+    <Compile Include="Models\PointOfInterest.cs" />
+    <Compile Include="Models\Property.cs" />
+    <Compile Include="Models\PropertyImage.cs" />
+    <Compile Include="Models\PurposeOfVisiting.cs" />
+    <Compile Include="Models\Recommendation.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Tax.cs" />
+    <Compile Include="Models\Title.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\Translator.cs" />
+    <Compile Include="Models\TravelBy.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserLog.cs" />
+    <Compile Include="Models\UserMenuPermission.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\UsersCompany.cs" />
+    <Compile Include="Models\UsersInRole.cs" />
+    <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\VisitorReview.cs" />
+    <Compile Include="Models\YoutubeUrl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eZeroOne.Common\eZeroOne.Common.csproj">
+      <Project>{56a3c845-d9e0-43ce-8df6-510dbc683bbc}</Project>
+      <Name>eZeroOne.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

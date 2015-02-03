@@ -1,0 +1,155 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>customer's invoice</title>
+<link href='http://fonts.googleapis.com/css?family=Lobster|Terminal+Dosis' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Lobster' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,mediumitalic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lobster|Lobster+Two' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body style="font-family: 'Roboto',Arial, Helvetica, sans-serif; font-size: 12px; text-transform:lowercase;">
+
+<table width="600px" border="0" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; margin-top: 100px;">
+  <tr style="width:100%">
+     <td colspan="2">
+           <div style="background-color:#00A0DC;  font-size: 1px;line-height: 0.8em;height: 15px;">&nbsp;-</div>
+        </td>
+    </tr>
+    <tr style="background-color:#FFF; text-align: left">
+    	<td valign="top" style="padding-left: 20px; padding-right: 20px; padding-top: 30px; padding-bottom: 20px;background-color:#FFF;">
+        	<h1 style="color:#00A0DC; font-size: 16px; font-weight: bold;">globalspices online shopping</h1>
+            <h2 style="color:#333; font-size: 14px; font-weight: bold;">Customer Invoice :: 
+			<# WriteLine(Invoice.CustomerName); #>
+			
+			</h2>
+			
+        </td>
+        <td valign="top" style="text-align:right; padding-right: 20px;padding-top:30px;background-color:#FFF;">
+        	<img src="~/Content/images/logo.gif" width="44" height="44" alt="">
+        </td>
+    </tr>
+    
+    <tr style="background-color:#FFF; text-align: left">
+    	<td  style="padding-left: 20px; padding-right: 20px; padding-top: 0px;font-size: 14px;">
+        	<b>
+			Invoice Number :<# WriteLine(Invoice.InvoiceId); #>
+			</b>
+			
+        </td>
+		<td style="padding-left: 20px; padding-right: 20px; padding-top: 0px;font-size: 14px;">
+        	<b>
+			Invoice Date :<# WriteLine(Invoice.InvoicedDate.ToLongDateString()); #>
+			</b>
+			
+        </td>
+    </tr>
+    <tr> <td>&nbsp;</td> <td>&nbsp;</td>  </tr>
+   <tr> <td>&nbsp;&nbsp;</td> <td>&nbsp;&nbsp;&nbsp;</td>  </tr>
+    <tr style="background-color:#FFF; text-align: left">
+   	  <td colspan="2" style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 10px">
+          
+		  <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style="width:150px;">Product</th>
+				  <th style="width:150px;">Price</th>
+                  <th style="width:150px;">Quantity</th>
+				  <th style="width:150px;">Discount %</th>
+                  <th style="width:150px;">Tax</th>
+				  <th style="width:150px;">Total</th>
+                  
+				</tr>
+              </thead>
+
+  				<# foreach (var item in Invoice.ItemDetails)
+					{
+						
+						WriteLine("<tr>");
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">{0}</span>", new object[]{item.ItemName});
+						WriteLine("</td>");
+
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">${0}</span>", new object[]{item.Price.ToString("0.00")});
+						WriteLine("</td>");
+
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">{0}</span>", new object[]{item.Qty.ToString("0.00")});
+						WriteLine("</td>");
+
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">{0}</span>", new object[]{item.Discount.ToString("0.00")});
+						WriteLine("</td>");
+
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">${0}</span>", new object[]{item.Tax.ToString("0.00")});
+						WriteLine("</td>");
+
+						WriteLine("<td style=\"width:150px;\">");
+						WriteLine("<span style=\"display: block; color: #3F3126; font-size: 12px; font-weight: bold; padding-top: 0px; padding-bottom: 4px;\">${0}</span>", new object[]{item.Total.ToString("0.00")});
+						WriteLine("</td>");
+
+						
+						WriteLine("</tr>");
+				  }
+					#>
+
+			    <tr>
+                  <td colspan="5" style="text-align:right"><b>Total Price:</b>	</td>
+                  <td>
+				  $<# WriteLine(Invoice.TotalAmount.ToString("0.00")); #>
+						
+				  </td>
+                </tr>
+				 <tr>
+                  <td colspan="5" style="text-align:right"><b>Total Discount:</b>	</td>
+                   <td> 
+				    $<# WriteLine(Invoice.TotalDiscount.ToString("0.00")); #>
+				   
+				   </td>
+                </tr>
+                 <tr>
+                  <td colspan="5" style="text-align:right"><b>Total Tax:	</b></td>
+                  <td>
+				  
+				   $<# WriteLine(Invoice.TotalTax.ToString("0.00")); #>
+				   
+				  </td>
+                </tr>
+				 <tr>
+                  <td colspan="5" style="text-align:right"><b>Total Bill Amount:	</b></td>
+                  <td>
+				   $<# WriteLine(Invoice.BillAmount.ToString("0.00")); #>
+				    <span>==========</span>
+				  </td>
+                </tr>
+
+               </table>         
+        </td>
+    </tr>
+    
+    <tr style="background-color:#FFF; text-align: left;">
+    	<td colspan="2" style="padding-top: 0px; padding-bottom: 30px; padding-left: 20px; padding-right: 20px;">
+       		<a href="http://globalspices.com.au/" target="_blank" style="text-decoration: none; color:#00A0DC;font-size: 12px; ">more shopping...</a></td>
+    </tr>
+    
+    <tr style="background-color:#CECECE; text-align: left;">
+    	<td colspan="2" style="padding: 20px; color: #FFF; font-size: 10px">
+       	</td>
+    </tr>
+    
+</table>
+
+
+</body>
+</html>

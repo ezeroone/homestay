@@ -1,0 +1,73 @@
+﻿@using eZeroOne.Common
+
+<header>
+    <!--logo area start-->
+    <div class="logo-area">
+        @*<span style="float:right;color:#E25A00 "> Hot line (24 x 7) ::(+94) 772-367061 </span>*@
+        <a href="/Home/Index"><span id="logo"></span></a>
+        <span id="secondary-logo"></span>
+      
+    </div>
+    <!--end logo area-->
+
+    <!--nav bar start-->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!--mobile nav icon (hidden:CSS)-->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">menu
+                </a>
+                <!--end btn-navbar-->
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li id ="home" class="active">
+                            <a href="/Home/Index"><span class="icon-home"></span>Home</a>
+                        </li>
+                        @*<li>
+									<a href="/Property/Properties">Properties</a>
+								</li>*@
+                      @*  <li id="detailsearch">
+                            <a class="menuHighlight" href="/Property/Search">Detail search</a>
+                        </li>*@
+                      
+                    </ul>
+                    <ul class="nav pull-right">
+                          <li>
+                            <a href="/Home/aboutus">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/Home/contactus">Contact Us</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Registration<b class="caret"></b></a>
+                            <ul class="dropdown-menu" id="menu1">
+                                <li>@Html.ActionLink("Visitor Registration", "VisitorRegistration", "Account", new { area = "" }, new { @class = "" })</li>
+                                <li>@Html.ActionLink("Post Your Property", "ClientRegistration", "Account", new { area = "" }, new { @class = "" })</li>
+
+                            </ul>
+                        </li>
+                     
+
+                      @if (!User.Identity.IsAuthenticated)
+                      {
+                          <li class="pull-right">
+                            <a href="/Account/Login">Login</a>
+                        </li>
+                      }
+                        
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="pull-right">
+                                <a href="/Account/Logout">Sign out</a>
+                            </li>  
+                        }
+                    </ul>
+                </div>
+                <!-- end nav-collapse -->
+            </div>
+            <!-- end container-->
+        </div>
+        <!-- end navbar-inner -->
+    </nav>
+    <!--end nav bar-->
+</header>

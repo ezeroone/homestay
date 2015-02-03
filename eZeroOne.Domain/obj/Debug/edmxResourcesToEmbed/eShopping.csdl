@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eZeroOne.eShopping" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="eShoppingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccommodationStandards" EntityType="eZeroOne.eShopping.AccommodationStandard" />
+    <EntitySet Name="AccommodationTypes" EntityType="eZeroOne.eShopping.AccommodationType" />
+    <EntitySet Name="Bookings" EntityType="eZeroOne.eShopping.Booking" />
+    <EntitySet Name="BookingCarts" EntityType="eZeroOne.eShopping.BookingCart" />
+    <EntitySet Name="Clients" EntityType="eZeroOne.eShopping.Client" />
+    <EntitySet Name="Companies" EntityType="eZeroOne.eShopping.Company" />
+    <EntitySet Name="CompanyProfiles" EntityType="eZeroOne.eShopping.CompanyProfile" />
+    <EntitySet Name="Countries" EntityType="eZeroOne.eShopping.Country" />
+    <EntitySet Name="Cuisines" EntityType="eZeroOne.eShopping.Cuisine" />
+    <EntitySet Name="Customers" EntityType="eZeroOne.eShopping.Customer" />
+    <EntitySet Name="Designations" EntityType="eZeroOne.eShopping.Designation" />
+    <EntitySet Name="Dinings" EntityType="eZeroOne.eShopping.Dining" />
+    <EntitySet Name="EmailAttachments" EntityType="eZeroOne.eShopping.EmailAttachment" />
+    <EntitySet Name="EmailNotifications" EntityType="eZeroOne.eShopping.EmailNotification" />
+    <EntitySet Name="Features" EntityType="eZeroOne.eShopping.Feature" />
+    <EntitySet Name="Groups" EntityType="eZeroOne.eShopping.Group" />
+    <EntitySet Name="InvoiceNumbers" EntityType="eZeroOne.eShopping.InvoiceNumber" />
+    <EntitySet Name="Invoices" EntityType="eZeroOne.eShopping.Invoice" />
+    <EntitySet Name="Locations" EntityType="eZeroOne.eShopping.Location" />
+    <EntitySet Name="MainCities" EntityType="eZeroOne.eShopping.MainCity" />
+    <EntitySet Name="Menus" EntityType="eZeroOne.eShopping.Menu" />
+    <EntitySet Name="Notifications" EntityType="eZeroOne.eShopping.Notification" />
+    <EntitySet Name="PasswordResetTokens" EntityType="eZeroOne.eShopping.PasswordResetToken" />
+    <EntitySet Name="PaymentTypes" EntityType="eZeroOne.eShopping.PaymentType" />
+    <EntitySet Name="Places" EntityType="eZeroOne.eShopping.Place" />
+    <EntitySet Name="PointOfInterests" EntityType="eZeroOne.eShopping.PointOfInterest" />
+    <EntitySet Name="Properties" EntityType="eZeroOne.eShopping.Property" />
+    <EntitySet Name="PropertyImages" EntityType="eZeroOne.eShopping.PropertyImage" />
+    <EntitySet Name="PurposeOfVisitings" EntityType="eZeroOne.eShopping.PurposeOfVisiting" />
+    <EntitySet Name="Regions" EntityType="eZeroOne.eShopping.Region" />
+    <EntitySet Name="Roles" EntityType="eZeroOne.eShopping.Role" />
+    <EntitySet Name="Taxes" EntityType="eZeroOne.eShopping.Tax" />
+    <EntitySet Name="Titles" EntityType="eZeroOne.eShopping.Title" />
+    <EntitySet Name="Transactions" EntityType="eZeroOne.eShopping.Transaction" />
+    <EntitySet Name="TravelBies" EntityType="eZeroOne.eShopping.TravelBy" />
+    <EntitySet Name="UserLogs" EntityType="eZeroOne.eShopping.UserLog" />
+    <EntitySet Name="UserMenuPermissions" EntityType="eZeroOne.eShopping.UserMenuPermission" />
+    <EntitySet Name="UserRoles" EntityType="eZeroOne.eShopping.UserRole" />
+    <EntitySet Name="Users" EntityType="eZeroOne.eShopping.User" />
+    <EntitySet Name="UsersCompanies" EntityType="eZeroOne.eShopping.UsersCompany" />
+    <EntitySet Name="UsersInRoles" EntityType="eZeroOne.eShopping.UsersInRole" />
+    <EntitySet Name="Visitors" EntityType="eZeroOne.eShopping.Visitor" />
+    <AssociationSet Name="FK_Locations_Regions_Region_Id" Association="eZeroOne.eShopping.FK_Locations_Regions_Region_Id">
+      <End Role="Region" EntitySet="Regions" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccommodationStandard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AccommodationStandard1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccommodationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AccommodationType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="Int32" Name="VisitorId" Nullable="false" />
+    <Property Type="DateTime" Name="DateFrom" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DateTo" Nullable="false" Precision="3" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Tax" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="BookingCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="BookingCartId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Int32" Name="VisitorId" Nullable="false" />
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="DateTime" Name="DateFrom" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DateTo" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Type="Int32" Name="ClientId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Title" />
+    <Property Type="String" Name="FirstName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Gender" />
+    <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Country" />
+    <Property Type="String" Name="Zip" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mobile" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="Created" Precision="3" />
+    <Property Type="DateTime" Name="Modified" Precision="3" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+    <Property Type="DateTime" Name="DateOfJoin" Precision="3" />
+    <Property Type="Int32" Name="UserId" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Created" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="GroupId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Web" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Country" />
+    <Property Type="String" Name="Zip" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VATRegNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="Created" Precision="3" />
+    <Property Type="DateTime" Name="Modified" Precision="3" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Region_Id" />
+  </EntityType>
+  <EntityType Name="Cuisine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FoodType" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Foods" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Type="Int32" Name="CustomerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Title" />
+    <Property Type="String" Name="FirstName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Gender" />
+    <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Country" />
+    <Property Type="String" Name="Zip" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mobile" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="Created" Precision="3" />
+    <Property Type="DateTime" Name="Modified" Precision="3" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+    <Property Type="DateTime" Name="DateOfJoin" Precision="3" />
+    <Property Type="Int32" Name="UserId" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Dining">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FoodId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="MealType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmailAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="UniqueId" Nullable="false" />
+    <Property Type="String" Name="AttachmentPath" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Attachment" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EmailNotification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="UniqueId" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="String" Name="ToAddress" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromAddress" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromUserName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MailPort" />
+    <Property Type="String" Name="Subject" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsSend" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" />
+    <Property Type="Int32" Name="CompanyId" />
+    <Property Type="Int32" Name="DivisionId" />
+    <Property Type="Int32" Name="DepartmentId" />
+    <Property Type="Int32" Name="SectionId" />
+    <Property Type="DateTime" Name="SentDate" Precision="3" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Int32" Name="UserId" />
+  </EntityType>
+  <EntityType Name="Feature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Feature1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Website" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Created" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="InvoiceNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="InvoicePrefix" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="InvoiceNo" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="VisitorId" Nullable="false" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Tax" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BillAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="BookedDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="PaidBy" Nullable="false" />
+    <Property Type="Boolean" Name="PaymentMade" Nullable="false" />
+    <Property Type="Decimal" Name="Commision" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Region_Id" />
+    <Property Type="Int32" Name="Country_Id" />
+    <NavigationProperty Name="Region" Relationship="eZeroOne.eShopping.FK_Locations_Regions_Region_Id" FromRole="Location" ToRole="Region" />
+  </EntityType>
+  <EntityType Name="MainCity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MenuName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsParent" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Type="Int32" Name="NotificationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FirstName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRead" Nullable="false" />
+    <Property Type="String" Name="Company" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Weblink" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Source" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Discriminator" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PasswordResetToken">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Type="Int32" Name="TokenId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="EncryptedForm" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="PayBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="String" Name="PlaceName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Distance" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Lat" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Long" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TimeTake" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="TravelBy" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointOfInterest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PointOfInterest1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AccommodationType" Nullable="false" />
+    <Property Type="Int32" Name="AccommodationStandard" Nullable="false" />
+    <Property Type="Decimal" Name="DisplayPrice" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="NoOfRooms" Nullable="false" />
+    <Property Type="Decimal" Name="Squarefeet" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="ActiveFrom" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ActiveTo" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="IsPromotion" Nullable="false" />
+    <Property Type="String" Name="PromotionDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="PromotionAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="PromotionType" Nullable="false" />
+    <Property Type="Boolean" Name="ShowOnSliderBanner" Nullable="false" />
+    <Property Type="Int32" Name="ClientId" Nullable="false" />
+    <Property Type="Decimal" Name="Discount" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Tax" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Country" Nullable="false" />
+    <Property Type="Int32" Name="MainCity" Nullable="false" />
+    <Property Type="String" Name="MainCityName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Adderss" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ZipCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LandLinePrimary" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobilePrimary" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LandLineSecondary" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileSecondary" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ContactPerson1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ContactPerson2" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Longitudes" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Latitudes" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="RouteTo" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainTown" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="DistanceFromMainTown" Precision="18" Scale="0" />
+    <Property Type="String" Name="SearchKeys" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ItemId" Nullable="false" />
+    <Property Type="String" Name="ImageDescription" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ImagePath" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PurposeOfVisiting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PurposeOfVisit" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Locations" Relationship="eZeroOne.eShopping.FK_Locations_Regions_Region_Id" FromRole="Region" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsIncluded" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="InvoiceId" Nullable="false" />
+    <Property Type="Int32" Name="ItemId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Tax" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TravelBy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="LoggedId" />
+    </Key>
+    <Property Type="Guid" Name="LoggedId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="DateTime" Name="LoggedDate" Precision="3" />
+    <Property Type="DateTime" Name="LogOff" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserMenuPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="MenuId" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="IsViewed" Nullable="false" />
+    <Property Type="Boolean" Name="IsSave" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+    <Property Type="Boolean" Name="IsUpdate" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsEmailActivated" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="DateTime" Name="Created" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Company" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visitor">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Type="Int32" Name="VisitorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Title" />
+    <Property Type="String" Name="FirstName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Gender" />
+    <Property Type="String" Name="Email" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Country" />
+    <Property Type="String" Name="Zip" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mobile" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="Created" Precision="3" />
+    <Property Type="DateTime" Name="Modified" Precision="3" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="3" />
+    <Property Type="Int32" Name="UserId" />
+  </EntityType>
+  <Association Name="FK_Locations_Regions_Region_Id">
+    <End Type="eZeroOne.eShopping.Region" Role="Region" Multiplicity="0..1" />
+    <End Type="eZeroOne.eShopping.Location" Role="Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="Region_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

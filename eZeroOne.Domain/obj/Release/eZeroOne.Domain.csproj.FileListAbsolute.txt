@@ -1,0 +1,58 @@
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll.config
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\bin\Release\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eZeroOne.eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll.config
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\bin\Release\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\shopingCart\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll.config
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\EntityFramework.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\bin\Release\EntityFramework.xml
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+C:\Users\Navaseelan\Desktop\eShopping\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll.config
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.xml
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+C:\Users\N.Navaseelan\Desktop\HomeStay\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
+I:\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+I:\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+I:\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.dll
+I:\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+I:\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+I:\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.xml
+I:\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+I:\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+I:\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Domain.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\eZeroOne.Common.pdb
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\bin\Release\EntityFramework.xml
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.csprojResolveAssemblyReference.cache
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.dll
+F:\eZeroOneTech\My Live Projects\Projects\HomeStay\eZeroOne.Domain\obj\Release\eZeroOne.Domain.pdb
